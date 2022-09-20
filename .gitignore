@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#My additons
+*.txt
+ideas*
+_build/*
+ideas_python_course
+.vscode/*
