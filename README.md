@@ -20,8 +20,8 @@ To open the Jupyter book in the browser, run the `intro.html` file.
 
 ### adding another file or updating a file's name
 To add another file, the file needs to be added to the `mynewbook/` folder as an `.ipynb` or `.md` file. To also add the file to the file list, the file name needs to be added to the list in the `_toc.yml` file. Then, the `_build` folder needs to be removed and the Jupyter book needs to be build again with 
-`$ jupyter-book create mynewbook/`
-The `_build` folder needs to be removed before building the book again because otherwise the file list in the book doesn't show always show up. As when rebuilding the book only the files that were changed get updated and this leads to some problems.
+`$ jupyter-book create mynewbook/`.
+The `_build` folder needs to be removed before building the book again because otherwise the book doesn't show always show up in the file list. As when rebuilding the book only the files that were changed get updated and this leads to some problems.
 
 Every 'title' (a title is words with a # in front of it) in your .ipynb file will be added as a chapter on the welcome page. 
 
