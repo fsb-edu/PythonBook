@@ -28,7 +28,7 @@ The `_build` folder needs to be removed before building the book again because o
                                   re-build pages that are new/changed since
                                   the last run.
 
-Every 'title' (a title is words with one # in front of it) in your .ipynb file will be added as a chapter on the welcome page. Words with more than one # in front of it will be added as subchapters in the menue on the right side of the chapter page. 
+Every 'title' (a title is words with one # in front of it) in your .ipynb file will be added as a chapter on the welcome page. Words with more than one # in front of it will be added as subchapters in the menu on the right side of the chapter page. 
 
 Add GitHub link: https://jupyterbook.org/en/stable/basics/repository.html
 
