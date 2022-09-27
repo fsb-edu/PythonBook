@@ -32,8 +32,12 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 
 Add GitHub link: https://jupyterbook.org/en/stable/basics/repository.html
 
+
 To add references, this page is very clear: https://jupyterbook.org/en/stable/tutorials/references.html
+
 Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html
+
 Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html 
+
 More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html
 
