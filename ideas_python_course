@@ -1,47 +1,31 @@
 Possible topics for Python course:
 
 * For loops and the different varieties in Python (range, enumerate, neither)
-
 * Explaining functions and how variables are saved in functions (how variables in functions still point to the original variable instantiation).
-
 * Debugging practice. Give a code that does not work and find out why. Learning to read errors.
-
 * Some git introduction
-
 * Data and file organization
-
 * Reading and writing csv/txt files
-
 * Basic algorithms (eg. Lots of for loops is bad)
-
 * Introduce data analysis packages (pandas, matplotlib, scipy, numpy)
+
 
 I would use a similar structure as this online Harvard course: https://learning.edx.org/course/course-v1:HarvardX+CS50P+Python/home
 
 * Introduction
-
 * Functions and variables
-
 * Conditionals
-
 * Loops
-
 * Exceptions
-
 * Libraries
-
 * Unit Tests # try, assert and debugging
-
 * File I/O # opening and working with files
-
 * Regular expressions # Not really needed I'd say
-
 * OOP
-
 * Et Cetera # Python gimmicks and conventions
+
 
 Maybe:
 
 * Classes
-
 * Virtual environments and version handling
