@@ -25,7 +25,7 @@ To add another file, the file needs to be added to the `mynewbook/` folder as an
 - Explanation on structuring the `_toc.yml` file: https://jupyterbook.org/en/stable/structure/configure.html
 
 --Then, the `_build` folder needs to be removed and the Jupyter book needs to be build again with 
-`$ jupyter-book create mynewbook/`.
+`$ jupyter-book build mynewbook/`.
 The `_build` folder needs to be removed before building the book again because otherwise the book doesn't show always show up in the file list. As when rebuilding the book only the files that were changed get updated and this leads to some problems.-- This might also be solved by running `$ jupyter-book create mynewbook/ --all` The reference says:   `--all`         Re-build all pages. The default is to only
                                   re-build pages that are new/changed since
                                   the last run.
