@@ -8,7 +8,7 @@ Create a new conda environment for your Jupyter book:
 
 Install the JupyterBook plugin:
 `conda install -c conda-forge jupyter-book`
-This plugin is only needed for creating the JupyterBook backbone and maintaining it. Not for running the created JupyterBook.
+This plugin is only needed for creating the JupyterBook backbone and maintaining it. Not for running the created JupyterBook on a local device. I think the environment does need to have the packeges that you're using in the notebook installed. 
 
 Create a JupyterBook backbone:
 `$ jupyter-book create mynewbook/` 
