@@ -32,15 +32,14 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 
 ### Extra cool links
 
-- Add GitHub link: https://jupyterbook.org/en/stable/basics/repository.html
+- Publish JupyterBook from GitHub https://jupyterbook.org/en/stable/start/publish.html
+- Add link to a GitHub page: https://jupyterbook.org/en/stable/basics/repository.html
 - To add references, this page is very clear: https://jupyterbook.org/en/stable/tutorials/references.html
 - Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html
 - Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html 
 - More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html
 - Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ . 
 They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html
-
-
 
 ### Some nice examples of Books:
 
