@@ -8,7 +8,7 @@ Create a new conda environment for your Jupyter book:
 
 Install the JupyterBook plugin:
 `conda install -c conda-forge jupyter-book`
-This plugin is only needed for creating the JupyterBook backbone and maintaining it. Not for running the created JupyterBook.
+This plugin is only needed for creating the JupyterBook backbone and maintaining it. Not for running the created JupyterBook on a local device. The environment does need to have the packeges that you're using for the notebooks in your JupyterBook. 
 
 Create a JupyterBook backbone:
 `$ jupyter-book create mynewbook/` 
@@ -20,29 +20,29 @@ This generates a `_build` folder in the `mynewbook/` with the documents needed t
 
 To open the Jupyter book in the browser, open the `intro.html` file. 
 
-## adding another file or updating a file's name
+## Adding another file or updating a file's name
 To add another file, the file needs to be added to the `mynewbook/` folder as an `.ipynb` or `.md` file. To also add the file to the file list, the file name needs to be added to the list in the `_toc.yml` file. 
 - Explanation on structuring the `_toc.yml` file: https://jupyterbook.org/en/stable/structure/configure.html
 
---Then, the `_build` folder needs to be removed and the Jupyter book needs to be build again with 
-`$ jupyter-book create mynewbook/`.
-The `_build` folder needs to be removed before building the book again because otherwise the book doesn't show always show up in the file list. As when rebuilding the book only the files that were changed get updated and this leads to some problems.-- This might also be solved by running `$ jupyter-book create mynewbook/ --all` The reference says:   `--all`         Re-build all pages. The default is to only
-                                  re-build pages that are new/changed since
-                                  the last run.
+--Then, the Jupyter book needs to be build again with 
+`$ jupyter-book build mynewbook/ --all`.
+When rebuilding the book only the files that were changed get updated and this leads to some problems. Adding `-all` will forcefully update all the files and add the new file to the index of the files already present. 
 
 Every 'title' (a title is words with one # in front of it) in your .ipynb file will be added as a chapter on the welcome page. Words with more than one # in front of it will be added as subchapters in the menu on the right side of the chapter page. 
 
 ### Extra cool links
 
-- Add GitHub link: https://jupyterbook.org/en/stable/basics/repository.html
+- Publish JupyterBook from GitHub: https://jupyterbook.org/en/stable/publish/gh-pages.html and https://jupyterbook.org/en/stable/start/publish.html
+- Add link to a GitHub page: https://jupyterbook.org/en/stable/basics/repository.html
 - To add references, this page is very clear: https://jupyterbook.org/en/stable/tutorials/references.html
 - Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html
 - Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html 
 - More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html
+- Make code in JupyterBook executable (experimental feature): https://jupyterbook.org/en/stable/interactive/thebe.html
+- Open JupyterBook file in JupyterHub, Google Colab: https://jupyterbook.org/en/stable/interactive/launchbuttons.html
+- Add announcement banner at the top of the page: https://jupyterbook.org/en/stable/web/announcements.html
 - Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ . 
 They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html
-
-
 
 ### Some nice examples of Books:
 
