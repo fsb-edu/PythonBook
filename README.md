@@ -39,6 +39,7 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 - Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html 
 - More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html
 - Make code in JupyterBook executable (experimental feature): https://jupyterbook.org/en/stable/interactive/thebe.html
+- Open JupyterBook file in JupyterHub, Google Colab: https://jupyterbook.org/en/stable/interactive/launchbuttons.html
 - Add announcement banner at the top of the page: https://jupyterbook.org/en/stable/web/announcements.html
 - Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ . 
 They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html
