@@ -32,7 +32,7 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 
 ### Extra cool links
 
-- Publish JupyterBook from GitHub https://jupyterbook.org/en/stable/start/publish.html
+- Publish JupyterBook from GitHub: https://jupyterbook.org/en/stable/publish/gh-pages.html and https://jupyterbook.org/en/stable/start/publish.html
 - Add link to a GitHub page: https://jupyterbook.org/en/stable/basics/repository.html
 - To add references, this page is very clear: https://jupyterbook.org/en/stable/tutorials/references.html
 - Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html
