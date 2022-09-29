@@ -38,6 +38,7 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 - Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html
 - Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html 
 - More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html
+- Make code in JupyterBook executable (experimental feature): https://jupyterbook.org/en/stable/interactive/thebe.html
 - Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ . 
 They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html
 
