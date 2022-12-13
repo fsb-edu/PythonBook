@@ -1,0 +1,10 @@
+/**This file contains some basic customization to the elements of the book.*/
+
+p {
+	text-align: justify;
+}
+
+p img{
+	margin-left: 33%;
+	margin-right: 20%;
+}
