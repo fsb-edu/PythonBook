@@ -35,5 +35,7 @@ html:
 
 parse:
   myst_enable_extensions:
-    -html_image
-    -html_text
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    # APPARENTLY THIS DOES NOTHING IN MY CASE-----
+    - html_image

@@ -133,3 +133,4 @@ dmypy.json
 ideas*
 _build/*
 ideas_python_course
+.vscode/*
