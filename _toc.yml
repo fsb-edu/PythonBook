@@ -8,3 +8,10 @@ options:
 chapters:
 - file: chapters/0_introduction
 - file: chapters/1_intro_to_python
+- file: chapters/2_control_flow
+- file: chapters/3_functions
+- file: chapters/4_lists_and_tuples
+- file: chapters/5_sets_and_dictionaries
+- file: chapters/6_numpy_arrays
+- file: chapters/7_strings
+- file: chapters/8_files _exceptions
