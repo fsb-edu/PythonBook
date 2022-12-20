@@ -13,3 +13,7 @@ p img{
 	margin-left: 0%;
 	margin-right: 0%;
 }
+
+.admonition p{
+	text-align: left;
+}
