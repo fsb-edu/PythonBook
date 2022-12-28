@@ -9,11 +9,19 @@ p img{
 	margin-right: 20%;
 }
 
-.ch1 {
+.ch1, .ch2 {
 	margin-left: 0%;
 	margin-right: 0%;
 }
 
 .admonition p{
+	text-align: left;
+}
+
+caption, figcaption{
+	margin-left: 35%;
+}
+
+table td p{
 	text-align: left;
 }
