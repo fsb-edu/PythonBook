@@ -20,4 +20,4 @@ chapters:
 - file: chapters/8_files _exceptions
 - file: chapters/9_solutions
   sections:
-  - file: chapters/9_solutions_chapter_2
+  - file: chapters/9_1_solutions_chapter_2
