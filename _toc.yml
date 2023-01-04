@@ -19,3 +19,5 @@ chapters:
 - file: chapters/7_strings
 - file: chapters/8_files _exceptions
 - file: chapters/9_solutions
+  sections:
+  - file: chapters/9_solutions_chapter_2
