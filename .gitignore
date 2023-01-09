@@ -134,3 +134,10 @@ ideas*
 _build/*
 ideas_python_course
 .vscode/*
+
+#My additons
+*.txt
+ideas*
+_build/*
+ideas_python_course
+.vscode/*
