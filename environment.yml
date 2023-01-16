@@ -1,0 +1,6 @@
+name: python-jb
+dependencies:
+ - jupyter-book==0.13.1
+ - python==3.7.13
+ - pandas==1.2.4
+ - numpy==1.17.0

@@ -1,36 +1,37 @@
-# PythonPandas_JB
-JupyterBook on Python/Pandas introduction for Food Scientists.
+# Python_JB
+JupyterBook on Python and Pandas for Food Scientists.
 
-These steps clearly explain how to create a book: https://jupyterbook.org/en/stable/start/create.html 
+## Recreating the book
 
-# Generating a JupyterBook backbone:
-Create a new conda environment for your Jupyter book:
+1. Create the environment with the necessary packages by running: 
+	1. `conda env create -f environment.yml`
+	2. `conda activate python-jb`
+	3. `conda env list` - to check if the environment was created
+in the repository folder.
+2. Run `jupyter-book build --all .` inside the folder that contains the files. 
+3. Open the `index.html` file that can be found in the `_build` folder. 
 
-Install the JupyterBook plugin:
-`conda install -c conda-forge jupyter-book`
-This plugin is only needed for creating the JupyterBook backbone and maintaining it. Not for running the created JupyterBook on a local device. The environment does need to have the packeges that you're using for the notebooks in your JupyterBook. 
 
-Create a JupyterBook backbone:
-`$ jupyter-book create mynewbook/` 
-The name of the new folder with the JupyterBook will be `mynewbook/` 
+### Steps to install JupyterBook on Windows - Full Pipeline (Optional)
 
-Build the book to see the JupyterBook in the browser: 
-`jupyter-book build mybookname/`
-This generates a `_build` folder in the `mynewbook/` with the documents needed to run the JupyterBook in html 
+1. Make sure *python* and *pip* are installed and their *paths* are added to the **PATH** 
+environment variable in the System variables.
+2. Install JupyterBook using `pip install -U jupyter-book`
+3. Check if everything went well with the installation by running: `jupyter-book --help`
 
-To open the Jupyter book in the browser, open the `intro.html` file. 
+### Creating a book
+4.	Create a JupyterBook by running the following command: `jupyter-book create firstbook/`. 
+The first JupyterBook called firstbook will be created in the current working directory (folder).
 
-## Adding another file or updating a file's name
-To add another file, the file needs to be added to the `mynewbook/` folder as an `.ipynb` or `.md` file. To also add the file to the file list, the file name needs to be added to the list in the `_toc.yml` file. 
-- Explanation on structuring the `_toc.yml` file: https://jupyterbook.org/en/stable/structure/configure.html
+### Build the book
+5.	Run the command: `jupyter-book build firstbook`. A `_build` folder will be created inside 
+the *firstbook* folder. 
+6. Open *index.html* inside *_build* folder to see the JupyterBook in the browser of your choice.
 
---Then, the Jupyter book needs to be build again with 
-`$ jupyter-book build mynewbook/ --all`.
-When rebuilding the book only the files that were changed get updated and this leads to some problems. Adding `-all` will forcefully update all the files and add the new file to the index of the files already present. 
+More here: https://jupyterbook.org/en/stable/start/create.html 
 
-Every 'title' (a title is words with one # in front of it) in your .ipynb file will be added as a chapter on the welcome page. Words with more than one # in front of it will be added as subchapters in the menu on the right side of the chapter page. 
 
-### Extra cool links
+#### Extra cool links
 
 - Publish JupyterBook from GitHub: https://jupyterbook.org/en/stable/publish/gh-pages.html and https://jupyterbook.org/en/stable/start/publish.html
 - Add link to a GitHub page: https://jupyterbook.org/en/stable/basics/repository.html
@@ -44,7 +45,7 @@ Every 'title' (a title is words with one # in front of it) in your .ipynb file w
 - Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ . 
 They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html
 
-### Some nice examples of Books:
+#### Some nice examples of Books:
 
 - Qiime: http://readiab.org/introduction.html 
 - Very different layout: https://goodresearch.dev/ 
