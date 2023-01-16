@@ -41,4 +41,3 @@ parse:
     # including those that are enabled by default!
     # APPARENTLY THIS DOES NOTHING IN MY CASE-----
     - html_image
-    - amsmath
