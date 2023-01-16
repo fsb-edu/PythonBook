@@ -8,7 +8,7 @@ JupyterBook on Python and Pandas for Food Scientists.
 	2. `conda activate python-jb`
 	3. `conda env list` - to check if the environment was created
 in the repository folder.
-2. Run `jupyer-book build --all .` inside the folder that contains the files. 
+2. Run `jupyter-book build --all .` inside the folder that contains the files. 
 3. Open the `index.html` file that can be found in the `_build` folder. 
 
 
@@ -16,7 +16,7 @@ in the repository folder.
 
 1. Make sure *python* and *pip* are installed and their *paths* are added to the **PATH** 
 environment variable in the System variables.
-2. Install JupyterBook using `pip install -U jupyer-book`
+2. Install JupyterBook using `pip install -U jupyter-book`
 3. Check if everything went well with the installation by running: `jupyter-book --help`
 
 ### Creating a book
