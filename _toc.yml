@@ -24,3 +24,4 @@ chapters:
 - file: chapters/solutions/9_solutions
   sections:
   - file: chapters/solutions/9_1_solutions_chapter_2
+  - file: chapters/solutions/9_2_solutions_chapter_3
