@@ -9,9 +9,15 @@ chapters:
 - file: chapters/0_introduction
 - file: chapters/1_intro_to_python
 - file: chapters/2_control_flow
+  sections:
+  - file: chapters/2_1_control_flow_theory
+  - file: chapters/2_2_control_flow_exercises
 - file: chapters/3_functions
 - file: chapters/4_lists_and_tuples
 - file: chapters/5_sets_and_dictionaries
 - file: chapters/6_numpy_arrays
 - file: chapters/7_strings
 - file: chapters/8_files _exceptions
+- file: chapters/9_solutions
+  sections:
+  - file: chapters/9_1_solutions_chapter_2
