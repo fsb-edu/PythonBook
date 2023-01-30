@@ -11,6 +11,7 @@ execute:
   exclude_patterns:
         - README.md
         - 2_2_control_flow_exercises.ipynb
+        - 3_2_functions_exercises.ipynb
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
@@ -41,3 +42,4 @@ parse:
     # including those that are enabled by default!
     # APPARENTLY THIS DOES NOTHING IN MY CASE-----
     - html_image
+    - amsmath
