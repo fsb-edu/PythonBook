@@ -12,6 +12,7 @@ execute:
         - README.md
         - 2_2_control_flow_exercises.ipynb
         - 3_2_functions_exercises.ipynb
+        - 5_2_sets_and_dictionaries_exercises.ipynb
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
