@@ -18,7 +18,9 @@ chapters:
   - file: chapters/3_2_functions_exercises
 - file: chapters/4_lists_and_tuples
   sections:
-  - file: chapters/4_1_lists_and_tuples_theory
+  - file: chapters/4_1_lists_and_tuples_theory_1
+  - file: chapters/4_1_lists_and_tuples_theory_2
+  - file: chapters/4_1_lists_and_tuples_theory_3
   - file: chapters/4_2_lists_and_tuples_exercises
 - file: chapters/5_sets_and_dictionaries
 - file: chapters/6_numpy_arrays
