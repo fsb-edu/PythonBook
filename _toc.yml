@@ -19,7 +19,8 @@ chapters:
 - file: chapters/4_lists_and_tuples
 - file: chapters/5_sets_and_dictionaries
   sections:
-  - file: chapters/5_1_sets_and_dictionaries_theory
+  - file: chapters/5_1_sets_and_dictionaries_theory_1
+  - file: chapters/5_1_sets_and_dictionaries_theory_2
   - file: chapters/5_2_sets_and_dictionaries_exercises
 - file: chapters/6_numpy_arrays
 - file: chapters/7_strings
