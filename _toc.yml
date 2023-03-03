@@ -17,6 +17,11 @@ chapters:
   - file: chapters/3_1_functions_theory
   - file: chapters/3_2_functions_exercises
 - file: chapters/4_lists_and_tuples
+  sections:
+  - file: chapters/4_1_lists_and_tuples_theory_1
+  - file: chapters/4_1_lists_and_tuples_theory_2
+  - file: chapters/4_1_lists_and_tuples_theory_3
+  - file: chapters/4_2_lists_and_tuples_exercises
 - file: chapters/5_sets_and_dictionaries
   sections:
   - file: chapters/5_1_sets_and_dictionaries_theory_1
@@ -29,4 +34,6 @@ chapters:
   sections:
   - file: chapters/solutions/9_1_solutions_chapter_2
   - file: chapters/solutions/9_2_solutions_chapter_3
-  - file: chapters/solutions/9_3_solutions_chapter_5
+  - file: chapters/solutions/9_3_solutions_chapter_4
+  - file: chapters/solutions/9_4_solutions_chapter_5
+  
