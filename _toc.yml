@@ -23,6 +23,10 @@ chapters:
   - file: chapters/4_1_lists_and_tuples_theory_3
   - file: chapters/4_2_lists_and_tuples_exercises
 - file: chapters/5_sets_and_dictionaries
+  sections:
+  - file: chapters/5_1_sets_and_dictionaries_theory_1
+  - file: chapters/5_1_sets_and_dictionaries_theory_2
+  - file: chapters/5_2_sets_and_dictionaries_exercises
 - file: chapters/6_numpy_arrays
 - file: chapters/7_strings
 - file: chapters/8_files _exceptions
@@ -31,3 +35,5 @@ chapters:
   - file: chapters/solutions/9_1_solutions_chapter_2
   - file: chapters/solutions/9_2_solutions_chapter_3
   - file: chapters/solutions/9_3_solutions_chapter_4
+  - file: chapters/solutions/9_4_solutions_chapter_5
+  
