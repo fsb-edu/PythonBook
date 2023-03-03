@@ -20,6 +20,9 @@ chapters:
 - file: chapters/5_sets_and_dictionaries
 - file: chapters/6_numpy_arrays
 - file: chapters/7_strings
+  sections:
+  - file: chapters/7_1_strings_theory
+  - file: chapters/7_2_strings_exercises
 - file: chapters/8_files _exceptions
 - file: chapters/solutions/9_solutions
   sections:
