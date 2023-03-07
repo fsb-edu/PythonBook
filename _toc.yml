@@ -30,6 +30,10 @@ chapters:
 - file: chapters/6_numpy_arrays
 - file: chapters/7_strings
 - file: chapters/8_files _exceptions
+  sections:
+    - file: chapters/8_1_files _exceptions_theory_1
+    - file: chapters/8_1_files _exceptions_theory_2
+    - file: chapters/8_2_files _exceptions_exercises
 - file: chapters/solutions/9_solutions
   sections:
   - file: chapters/solutions/9_1_solutions_chapter_2
