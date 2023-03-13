@@ -28,6 +28,9 @@ chapters:
   - file: chapters/5_1_sets_and_dictionaries_theory_2
   - file: chapters/5_2_sets_and_dictionaries_exercises
 - file: chapters/6_numpy_arrays
+  sections:
+  - file: chapters/6_1_numpy_arrays_theory
+  - file: chapters/6_2_numpy_arrays_exercises
 - file: chapters/7_strings
 - file: chapters/8_files _exceptions
   sections:
@@ -40,6 +43,6 @@ chapters:
   - file: chapters/solutions/9_2_solutions_chapter_3
   - file: chapters/solutions/9_3_solutions_chapter_4
   - file: chapters/solutions/9_4_solutions_chapter_5
+  - file: chapters/solutions/9_5_solutions_chapter_6
   - file: chapters/solutions/9_7_solutions_chapter_8
-  
   
