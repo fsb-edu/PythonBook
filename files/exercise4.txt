@@ -1,0 +1,3 @@
+In this case, no exception was raised, as a result the code block in the try statement 
+was executed successfully. After it was finished, the control went to the finally block, printing the 
+statement and terminating.

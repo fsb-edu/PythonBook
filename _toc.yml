@@ -36,6 +36,10 @@ chapters:
   - file: chapters/7_1_strings_theory
   - file: chapters/7_2_strings_exercises
 - file: chapters/8_files _exceptions
+  sections:
+    - file: chapters/8_1_files _exceptions_theory_1
+    - file: chapters/8_1_files _exceptions_theory_2
+    - file: chapters/8_2_files _exceptions_exercises
 - file: chapters/solutions/9_solutions
   sections:
   - file: chapters/solutions/9_1_solutions_chapter_2
@@ -44,4 +48,6 @@ chapters:
   - file: chapters/solutions/9_4_solutions_chapter_5
   - file: chapters/solutions/9_5_solutions_chapter_6
   - file: chapters/solutions/9_6_solutions_chapter_7
+  - file: chapters/solutions/9_7_solutions_chapter_8
+  
   

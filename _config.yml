@@ -15,8 +15,9 @@ execute:
         - 4_2_lists_and_tuples_exercises.ipnyb
         - 5_2_sets_and_dictionaries_exercises.ipynb
         - 6_2_numpy_arrays_exercises.ipynb
-        - 7_2_strings_exercises.ipynb 
+        - 7_2_strings_exercises.ipynb
         - 8_2_files _exceptions_exercises.ipynb
+        - 8_2_files _exceptions_exercises_copy.ipynb
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
