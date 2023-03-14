@@ -32,6 +32,9 @@ chapters:
   - file: chapters/6_1_numpy_arrays_theory
   - file: chapters/6_2_numpy_arrays_exercises
 - file: chapters/7_strings
+  sections:
+  - file: chapters/7_1_strings_theory
+  - file: chapters/7_2_strings_exercises
 - file: chapters/8_files _exceptions
   sections:
     - file: chapters/8_1_files _exceptions_theory_1
@@ -44,5 +47,7 @@ chapters:
   - file: chapters/solutions/9_3_solutions_chapter_4
   - file: chapters/solutions/9_4_solutions_chapter_5
   - file: chapters/solutions/9_5_solutions_chapter_6
+  - file: chapters/solutions/9_6_solutions_chapter_7
   - file: chapters/solutions/9_7_solutions_chapter_8
+  
   

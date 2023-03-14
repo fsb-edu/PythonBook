@@ -129,9 +129,7 @@ dmypy.json
 .pyre/
 
 #My additons
-*.txt
 ideas*
 _build/*
 ideas_python_course
 .vscode/*
-files/*
