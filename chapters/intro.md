@@ -1,12 +1,11 @@
-# <center> Welcome to Python and Pandas for Food Scientists </center>
+# <center> Python and Pandas for Food Scientists </center>
 
 
 ![python logo](../images/python-logo.png)
 
 
-Programming nowdays is becoming interdisciplinary and part of many professions, thus having programming
-knowledge is becoming more and more important. Given the flexibility and capabilites of Python, throughout 
-this book we are going to give an introduction to programming with Python and help you master the programming logic 
-and concepts. At the same time, this book can serve as a cheatsheet that you can consult whenever stuck somewhere in the 
-endless Python world. Enjoy!
+Welcome to this Python course! In today's world, programming has become an integral part of any field of study, including Food Science, thus familiarizing yourself with a language like Python is of great importance if you want to not only streamline your own work but also understand other people's code. 
 
+Python is an incredibly versatile programming language - this book aims at introducing all the basic concepts which you need to comfortably use it in your daily work. We hope that going through the theory and exercises presented here will allow you to familiarize yourself with Python - if you already have experience with coding you may also treat this book as a cheatsheet or a reference.
+
+Happy coding!

@@ -9,15 +9,15 @@ logo: images/eth_logo.svg
 # See https://jupyterbook.org/content/execute.html
 execute:
   exclude_patterns:
-        - README.md
-        - 2_2_control_flow_exercises.ipynb
-        - 3_2_functions_exercises.ipynb
-        - 4_2_lists_and_tuples_exercises.ipnyb
-        - 5_2_sets_and_dictionaries_exercises.ipynb
-        - 6_2_numpy_arrays_exercises.ipynb
-        - 7_2_strings_exercises.ipynb
-        - 8_2_files _exceptions_exercises.ipynb
-        - 8_2_files _exceptions_exercises_copy.ipynb
+    - README.md
+    - 02_control_flow_exercises.ipynb
+    - 02_functions_exercises.ipynb
+    - 02_lists_and_tuples_exercises.ipnyb
+    - 02_sets_and_dictionaries_exercises.ipynb
+    - 02_numpy_arrays_exercises.ipynb
+    - 02_strings_exercises.ipynb
+    - 02_files_exceptions_exercises.ipynb
+    - 02_files_exceptions_exercises_copy.ipynb
   execute_notebooks: force
 
 # Define the name of the latex output file for PDF builds
@@ -31,9 +31,13 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/bokulich-lab/PythonPandas_JB  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/bokulich-lab/PythonBook  # Online location of your book
   branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Interactive computing interfaces
+launch_buttons:
+  binderhub_url: "https://binder.let.ethz.ch"
+  colab_url: "https://colab.research.google.com"
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -41,6 +45,8 @@ html:
   use_issues_button: true
   use_repository_button: true
   favicon: images/ethfavico.png
+  comments:
+    hypothesis: true
 
 parse:
   myst_enable_extensions:
@@ -49,3 +55,12 @@ parse:
     # APPARENTLY THIS DOES NOTHING IN MY CASE-----
     - html_image
     - amsmath
+
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+    bibtex_bibfiles: 
+    - "references.bib"
+
+execute:
+  timeout: 120

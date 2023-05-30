@@ -6,48 +6,46 @@ root: chapters/intro
 options:
     numbered: true
 chapters:
-- file: chapters/0_introduction
-- file: chapters/1_intro_to_python
-- file: chapters/2_control_flow
+- file: chapters/00/introduction
+- file: chapters/01/intro_to_python
+- file: chapters/02/00_control_flow
   sections:
-  - file: chapters/2_1_control_flow_theory
-  - file: chapters/2_2_control_flow_exercises
-- file: chapters/3_functions
+  - file: chapters/02/01_control_flow_theory
+  - file: chapters/02/02_control_flow_exercises
+- file: chapters/03/00_functions
   sections:
-  - file: chapters/3_1_functions_theory
-  - file: chapters/3_2_functions_exercises
-- file: chapters/4_lists_and_tuples
+  - file: chapters/03/01_functions_theory
+  - file: chapters/03/02_functions_exercises
+- file: chapters/04/00_lists_and_tuples
   sections:
-  - file: chapters/4_1_lists_and_tuples_theory_1
-  - file: chapters/4_1_lists_and_tuples_theory_2
-  - file: chapters/4_1_lists_and_tuples_theory_3
-  - file: chapters/4_2_lists_and_tuples_exercises
-- file: chapters/5_sets_and_dictionaries
+  - file: chapters/04/01_lists_and_tuples_theory_1
+  - file: chapters/04/02_lists_and_tuples_theory_2
+  - file: chapters/04/03_lists_and_tuples_theory_3
+  - file: chapters/04/04_lists_and_tuples_exercises
+- file: chapters/05/00_sets_and_dictionaries
   sections:
-  - file: chapters/5_1_sets_and_dictionaries_theory_1
-  - file: chapters/5_1_sets_and_dictionaries_theory_2
-  - file: chapters/5_2_sets_and_dictionaries_exercises
-- file: chapters/6_numpy_arrays
+  - file: chapters/05/01_sets_and_dictionaries_theory_1
+  - file: chapters/05/02_sets_and_dictionaries_theory_2
+  - file: chapters/05/03_sets_and_dictionaries_exercises
+- file: chapters/06/00_numpy_arrays
   sections:
-  - file: chapters/6_1_numpy_arrays_theory
-  - file: chapters/6_2_numpy_arrays_exercises
-- file: chapters/7_strings
+  - file: chapters/06/01_numpy_arrays_theory
+  - file: chapters/06/02_numpy_arrays_exercises
+- file: chapters/07/00_strings
   sections:
-  - file: chapters/7_1_strings_theory
-  - file: chapters/7_2_strings_exercises
-- file: chapters/8_files _exceptions
+  - file: chapters/07/01_strings_theory
+  - file: chapters/07/02_strings_exercises
+- file: chapters/08/00_files _exceptions
   sections:
-    - file: chapters/8_1_files _exceptions_theory_1
-    - file: chapters/8_1_files _exceptions_theory_2
-    - file: chapters/8_2_files _exceptions_exercises
-- file: chapters/solutions/9_solutions
+    - file: chapters/08/01_files _exceptions_theory_1
+    - file: chapters/08/02_files _exceptions_theory_2
+    - file: chapters/08/03_files _exceptions_exercises
+- file: chapters/solutions/00_solutions
   sections:
-  - file: chapters/solutions/9_1_solutions_chapter_2
-  - file: chapters/solutions/9_2_solutions_chapter_3
-  - file: chapters/solutions/9_3_solutions_chapter_4
-  - file: chapters/solutions/9_4_solutions_chapter_5
-  - file: chapters/solutions/9_5_solutions_chapter_6
-  - file: chapters/solutions/9_6_solutions_chapter_7
-  - file: chapters/solutions/9_7_solutions_chapter_8
-  
-  
+  - file: chapters/solutions/01_solutions_chapter_2
+  - file: chapters/solutions/02_solutions_chapter_3
+  - file: chapters/solutions/03_solutions_chapter_4
+  - file: chapters/solutions/04_solutions_chapter_5
+  - file: chapters/solutions/05_solutions_chapter_6
+  - file: chapters/solutions/06_solutions_chapter_7
+  - file: chapters/solutions/07_solutions_chapter_8
