@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python_JB &#8212; Python and Pandas for Food Scientists</title>
+    <title>PythonBook &#8212; Python and Pandas for Food Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -529,35 +529,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#recreating-the-book">
    Recreating the book
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#steps-to-install-jupyterbook-on-windows-full-pipeline-optional">
-     Steps to install JupyterBook on Windows - Full Pipeline (Optional)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-book">
-     Creating a book
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-the-book">
-     Build the book
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extra-cool-links">
-       Extra cool links
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#some-nice-examples-of-books">
-       Some nice examples of Books:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -568,7 +539,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Python_JB</h1>
+                <h1>PythonBook</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -582,35 +553,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#recreating-the-book">
    Recreating the book
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#steps-to-install-jupyterbook-on-windows-full-pipeline-optional">
-     Steps to install JupyterBook on Windows - Full Pipeline (Optional)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-book">
-     Creating a book
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-the-book">
-     Build the book
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#extra-cool-links">
-       Extra cool links
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#some-nice-examples-of-books">
-       Some nice examples of Books:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -622,73 +564,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="python-jb">
-<h1>Python_JB<a class="headerlink" href="#python-jb" title="Permalink to this headline">#</a></h1>
-<p>JupyterBook on Python and Pandas for Food Scientists.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="pythonbook">
+<h1>PythonBook<a class="headerlink" href="#pythonbook" title="Permalink to this headline">#</a></h1>
+<p><a class="reference external" href="https://binder.let.ethz.ch/v2/gh/bokulich-lab/PythonBook/main?labpath=chapters"><img alt="Binder" src="https://binder.let.ethz.ch/badge_logo.svg" /></a></p>
+<p>JupyterBook on Python for Food Scientists.</p>
 <section id="recreating-the-book">
 <h2>Recreating the book<a class="headerlink" href="#recreating-the-book" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
-<li><p>Create the environment with the necessary packages by running:</p>
-<ol class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">python-jb</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code> - to check if the environment was created
-in the repository folder.</p></li>
-</ol>
+<li><p>Make sure you have <a class="reference external" href="https://python-poetry.org/">Poetry</a> available on your system.</p></li>
+<li><p>Clone this repository and create the required environment:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code> if you only want to re-create the book</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span> <span class="pre">--with</span> <span class="pre">dev</span></code> if you want to re-create the book and open individual chapters using JupyterLab</p></li>
+</ul>
 </li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">.</span></code> inside the folder that contains the files.</p></li>
-<li><p>Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file that can be found in the <code class="docutils literal notranslate"><span class="pre">_build</span></code> folder.</p></li>
-</ol>
-<section id="steps-to-install-jupyterbook-on-windows-full-pipeline-optional">
-<h3>Steps to install JupyterBook on Windows - Full Pipeline (Optional)<a class="headerlink" href="#steps-to-install-jupyterbook-on-windows-full-pipeline-optional" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p>Make sure <em>python</em> and <em>pip</em> are installed and their <em>paths</em> are added to the <strong>PATH</strong>
-environment variable in the System variables.</p></li>
-<li><p>Install JupyterBook using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code></p></li>
-<li><p>Check if everything went well with the installation by running: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">--help</span></code></p></li>
-</ol>
-</section>
-<section id="creating-a-book">
-<h3>Creating a book<a class="headerlink" href="#creating-a-book" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p>Create a JupyterBook by running the following command: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">firstbook/</span></code>.
-The first JupyterBook called firstbook will be created in the current working directory (folder).</p></li>
-</ol>
-</section>
-<section id="build-the-book">
-<h3>Build the book<a class="headerlink" href="#build-the-book" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p>Run the command: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">firstbook</span></code>. A <code class="docutils literal notranslate"><span class="pre">_build</span></code> folder will be created inside
-the <em>firstbook</em> folder.</p></li>
-<li><p>Open <em>index.html</em> inside <em>_build</em> folder to see the JupyterBook in the browser of your choice.</p></li>
-</ol>
-<p>More here: https://jupyterbook.org/en/stable/start/create.html</p>
-<section id="extra-cool-links">
-<h4>Extra cool links<a class="headerlink" href="#extra-cool-links" title="Permalink to this headline">#</a></h4>
+<li><p>To render the book, execute the following command:</p>
 <ul class="simple">
-<li><p>Publish JupyterBook from GitHub: https://jupyterbook.org/en/stable/publish/gh-pages.html and https://jupyterbook.org/en/stable/start/publish.html</p></li>
-<li><p>Add link to a GitHub page: https://jupyterbook.org/en/stable/basics/repository.html</p></li>
-<li><p>To add references, this page is very clear: https://jupyterbook.org/en/stable/tutorials/references.html</p></li>
-<li><p>Adding images and math: https://jupyterbook.org/en/stable/file-types/markdown.html</p></li>
-<li><p>Interactions with data visualizations in the page: https://jupyterbook.org/en/stable/interactive/interactive.html</p></li>
-<li><p>More interactive data visualisations and hide/see boxes: https://jupyterbook.org/en/stable/file-types/notebooks.html</p></li>
-<li><p>Make code in JupyterBook executable (experimental feature): https://jupyterbook.org/en/stable/interactive/thebe.html</p></li>
-<li><p>Open JupyterBook file in JupyterHub, Google Colab: https://jupyterbook.org/en/stable/interactive/launchbuttons.html</p></li>
-<li><p>Add announcement banner at the top of the page: https://jupyterbook.org/en/stable/web/announcements.html</p></li>
-<li><p>Video in JupyterBook (appearently a lot of people have problems with this so maybe not worth it): https://mstruwig.com/posts/jupyterbook-video/ .
-They seemed to manage it somehow: https://inria.github.io/scikit-learn-mooc/overfit/learning_validation_curves_slides.html</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">run</span> <span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">.</span></code></p></li>
 </ul>
-</section>
-<section id="some-nice-examples-of-books">
-<h4>Some nice examples of Books:<a class="headerlink" href="#some-nice-examples-of-books" title="Permalink to this headline">#</a></h4>
-<ul class="simple">
-<li><p>Qiime: http://readiab.org/introduction.html</p></li>
-<li><p>Very different layout: https://goodresearch.dev/</p></li>
-<li><p>Coloured boxes in the page! https://lukas-snoek.com/NI-edu/fMRI-pattern-analysis/week_1/design_and_pattern_estimation.html</p></li>
-<li><p>Gif in page! https://openpifpaf.github.io/intro.html</p></li>
-</ul>
-</section>
-</section>
+</li>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder and open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser.</p></li>
+</ol>
+<p><a class="reference external" href="https://ethz.ch/en/the-eth-zurich/education/innovedum.html"><img alt="Innovedum logo" src="_images/innovedum_logo.png" /></a></p>
 </section>
 </section>
 
