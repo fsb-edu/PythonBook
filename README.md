@@ -1,5 +1,6 @@
 # PythonBook
 [![Binder](https://binder.let.ethz.ch/badge_logo.svg)](https://binder.let.ethz.ch/v2/gh/bokulich-lab/PythonBook/main?labpath=chapters)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-PythonBook-brightgreen)](https://bokulich-lab.github.io/PythonBook/)
 
 JupyterBook on Python for Food Scientists.
 
