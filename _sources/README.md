@@ -12,4 +12,6 @@ JupyterBook on Python for Food Scientists.
 	* `poetry run jupyter-book build --all .`
 4. Navigate to the `_build/html` folder and open `index.html` in your browser.
 
-[![Innovedum logo](images/innovedum_logo.png)](https://ethz.ch/en/the-eth-zurich/education/innovedum.html)
+## Acknowledgements
+This project was funded through the Innovedum initiative of ETH Zürich.
+[<img src="images/innovedum_logo.png" width="500">](https://ethz.ch/en/the-eth-zurich/education/innovedum.html)
