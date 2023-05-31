@@ -1,0 +1,1502 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6.2. Readings: dictionaries &#8212; Python and Pandas for Food Scientists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../../_static/ethfavico.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.3. Exercises" href="03_sets_and_dictionaries_exercises.html" />
+    <link rel="prev" title="6.1. Readings: sets" href="01_sets_and_dictionaries_theory_1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/eth_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Pandas for Food Scientists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <center> Python for Food Scientists </center>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01/intro_to_python.html">
+   2. Introduction to Python programming
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/00_control_flow.html">
+   3. If-Else statements and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01_control_flow_theory.html">
+     3.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02_control_flow_exercises.html">
+     3.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/00_functions.html">
+   4. Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01_functions_theory.html">
+     4.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02_functions_exercises.html">
+     4.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/00_lists_and_tuples.html">
+   5. Lists and tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01_lists_and_tuples_theory_1.html">
+     5.1. Readings: lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02_lists_and_tuples_theory_2.html">
+     5.2. Readings: tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03_lists_and_tuples_theory_3.html">
+     5.3. Readings: functions and methods for lists and tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04_lists_and_tuples_exercises.html">
+     5.4. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_sets_and_dictionaries.html">
+   6. Sets and dictionaries
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_sets_and_dictionaries_theory_1.html">
+     6.1. Readings: sets
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2. Readings: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_sets_and_dictionaries_exercises.html">
+     6.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/00_numpy_arrays.html">
+   7. Numpy arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/01_numpy_arrays_theory.html">
+     7.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/02_numpy_arrays_exercises.html">
+     7.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/00_strings.html">
+   8. Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/01_strings_theory.html">
+     8.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/02_strings_exercises.html">
+     8.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08/00_files%20_exceptions.html">
+   9. Files and exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/01_files%20_exceptions_theory_1.html">
+     9.1. Readings: files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/02_files%20_exceptions_theory_2.html">
+     9.2. Readings: exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/03_files%20_exceptions_exercises.html">
+     9.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/01_solutions_chapter_2.html">
+     10.1. Solutions to Chapter 3 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/02_solutions_chapter_3.html">
+     10.2. Solutions to Chapter 4 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/03_solutions_chapter_4.html">
+     10.3. Solutions to Chapter 5 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/04_solutions_chapter_5.html">
+     10.4. Solutions to Chapter 6 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/05_solutions_chapter_6.html">
+     10.5. Solutions to Chapter 7 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/06_solutions_chapter_7.html">
+     10.6. Solutions to Chapter 8 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/07_solutions_chapter_8.html">
+     10.7. Solutions to Chapter 9 Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://binder.let.ethz.ch/v2/gh/bokulich-lab/PythonBook/main?urlpath=tree/chapters/05/02_sets_and_dictionaries_theory_2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/bokulich-lab/PythonBook/blob/main/chapters/05/02_sets_and_dictionaries_theory_2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook/issues/new?title=Issue%20on%20page%20%2Fchapters/05/02_sets_and_dictionaries_theory_2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/05/02_sets_and_dictionaries_theory_2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   6.2.1. Dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dictionary">
+     6.2.1.1. Create a dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-key-value-pairs">
+     6.2.1.2. Adding key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-key-value-pairs">
+     6.2.1.3. Removing key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#updating-key-value-pairs">
+     6.2.1.4. Updating key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-keys-values-and-key-value-pairs">
+     6.2.1.5. Accessing keys, values and key-value pairs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-keys">
+       6.2.1.5.1. Accessing keys
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-values">
+       6.2.1.5.2. Accessing values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-key-value-pairs">
+       6.2.1.5.3. Accessing key-value pairs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-dictionaries-for-specific-keys">
+     6.2.1.6. Searching dictionaries for specific keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-method">
+     6.2.1.7.
+     <strong>
+      update()
+     </strong>
+     method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary-comprehension">
+     6.2.1.8. Dictionary comprehension
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-dictionaries">
+     6.2.1.9. Comparing dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copying-dictionaries">
+     6.2.1.10. Copying dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Readings: dictionaries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dictionaries">
+   6.2.1. Dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-dictionary">
+     6.2.1.1. Create a dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-key-value-pairs">
+     6.2.1.2. Adding key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-key-value-pairs">
+     6.2.1.3. Removing key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#updating-key-value-pairs">
+     6.2.1.4. Updating key-value pairs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessing-keys-values-and-key-value-pairs">
+     6.2.1.5. Accessing keys, values and key-value pairs
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-keys">
+       6.2.1.5.1. Accessing keys
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-values">
+       6.2.1.5.2. Accessing values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-key-value-pairs">
+       6.2.1.5.3. Accessing key-value pairs
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-dictionaries-for-specific-keys">
+     6.2.1.6. Searching dictionaries for specific keys
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-method">
+     6.2.1.7.
+     <strong>
+      update()
+     </strong>
+     method
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary-comprehension">
+     6.2.1.8. Dictionary comprehension
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-dictionaries">
+     6.2.1.9. Comparing dictionaries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copying-dictionaries">
+     6.2.1.10. Copying dictionaries
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="readings-dictionaries">
+<h1><span class="section-number">6.2. </span>Readings: dictionaries<a class="headerlink" href="#readings-dictionaries" title="Permalink to this headline">#</a></h1>
+<section id="dictionaries">
+<h2><span class="section-number">6.2.1. </span>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
+<p>Dictionaries hold collections of values in <em>key-value</em> pairs. In a dictionary each key <strong>must</strong> be <em>unique</em>, but values can be repeated. An example of a dictionary might be a <em>map</em> between a chemical element letter and the chemical element’s name. The corresponding data-type in Python is <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dictionaries are also ordered from Python version 3.6.x and onwards. This means that the order items are stored in memory depends on how the items are added.</p>
+</div>
+</aside>
+<section id="create-a-dictionary">
+<h3><span class="section-number">6.2.1.1. </span>Create a dictionary<a class="headerlink" href="#create-a-dictionary" title="Permalink to this headline">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Keys must be unique and immutable.</p>
+</div>
+</aside>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>String keys are case sensitive: <code class="docutils literal notranslate"><span class="pre">abc</span></code> is different from <code class="docutils literal notranslate"><span class="pre">aBc</span></code>.</p>
+</div>
+</aside>
+<p>The syntax for creating a dictionary is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">key1</span><span class="p">:</span><span class="n">value1</span><span class="p">,</span> <span class="n">key2</span><span class="p">:</span><span class="n">value2</span><span class="o">....</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>As stated previously, keys have to be unique and immutable. This means that we can use data-types such as strings, integers, floats, tuples, etc as keys. Values can be of any type and can repeat as well.
+For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="s1">&#39;Hydrogen&#39;</span>
+<span class="p">}</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As always, we can use the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function to find the number of elements in a dictionary.</p>
+</div>
+</aside>
+<p>As you can see, <code class="docutils literal notranslate"><span class="pre">chemical_elements</span></code> is an example of a dictionary that <em>maps</em> the chemical symbol to the name of the element. The keys are strings and are <em>immutable</em>. In this case the values happen to be strings and as a result they are <em>immutable</em>, but this is not necessarily always the case.
+Consider a parabola. As you might now, it is symmetric with respect to the y-axis. So for the same value of the function, there will be two values of x. The keys of our dictionary will be the x-values and the values will be the y-values. Here is an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parabola</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+<span class="n">parabola</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 1, -1: 1, 2: 4, -2: 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To access a single element we need to use the key. The syntax is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;O&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parabola</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oxygen
+1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we try to access the value of a key that does not exist, we are going to get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">7</span><span class="n">nw_x13n5q965rss_qz6061m0000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_60210</span><span class="o">/</span><span class="mf">525199925.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;Ca&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To prevent such errors, it is desirable to use the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method of dictionaries. If the key exists, it returns the value associated with that key, otherwise it returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. To return another message we can pass the message as a second argument to the <code class="docutils literal notranslate"><span class="pre">get()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Ca&#39;</span><span class="p">,</span> <span class="s1">&#39;Not present&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Not present&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-key-value-pairs">
+<h3><span class="section-number">6.2.1.2. </span>Adding key-value pairs<a class="headerlink" href="#adding-key-value-pairs" title="Permalink to this headline">#</a></h3>
+<p>We can add a key-value pair for a key that does not already exist in a dictionary as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span><span class="p">[</span><span class="n">new_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>For example, if we want to add <code class="docutils literal notranslate"><span class="pre">Potassium</span></code> to the <code class="docutils literal notranslate"><span class="pre">chemical_elements</span></code> dictionary then we would write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Potassium&#39;</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the key <code class="docutils literal notranslate"><span class="pre">'K'</span></code> was present and we try to add it again., it will simply overwrite the existing entry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;Potassium&#39;</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-key-value-pairs">
+<h3><span class="section-number">6.2.1.3. </span>Removing key-value pairs<a class="headerlink" href="#removing-key-value-pairs" title="Permalink to this headline">#</a></h3>
+<p>In order to remove a key-value pair from a dictionary we need to use the <strong>del</strong> operator:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">dictionary_name</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another way to remove key-value pairs is by using the <code class="docutils literal notranslate"><span class="pre">pop(key_name)</span></code> or <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> methods. The first one removes key-value pair that corresponds to the passed <code class="docutils literal notranslate"><span class="pre">key_name</span></code> argument, while the second one removes the last inserted key-value pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span><span class="o">=</span> <span class="s1">&#39;Calcium&#39;</span>
+<span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sodium&#39;</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;Ca&#39;: &#39;Calcium&#39;,
+ &#39;K&#39;: &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Ca&#39;</span><span class="p">)</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;K&#39;: &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to empty the dictionary we can use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method. Mind that this will not delete the dictionary, but it will delete all key value pairs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before clearing:&#39;</span><span class="p">,</span> <span class="n">parabola</span><span class="p">)</span>
+<span class="n">parabola</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After clearing:&#39;</span><span class="p">,</span> <span class="n">parabola</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before clearing: {0: 0, 1: 1, -1: 1, 2: 4, -2: 4}
+After clearing: {}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="updating-key-value-pairs">
+<h3><span class="section-number">6.2.1.4. </span>Updating key-value pairs<a class="headerlink" href="#updating-key-value-pairs" title="Permalink to this headline">#</a></h3>
+<p>In order to update a value related to a key we just access the value corresponding to that key and assign a new value. The syntax is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_names</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_value</span>
+</pre></div>
+</div>
+<p>For example, we can add again ‘Potasium’ to the list, misspelled, and then change it to the correct version:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Potasium&#39;</span> <span class="c1"># add Potassium again</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potasium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Potassium&#39;</span> <span class="c1"># correct spelling</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-keys-values-and-key-value-pairs">
+<h3><span class="section-number">6.2.1.5. </span>Accessing keys, values and key-value pairs<a class="headerlink" href="#accessing-keys-values-and-key-value-pairs" title="Permalink to this headline">#</a></h3>
+<p>In order to get keys, values and key-value pairs of a dictionary we need to use the respective methods: <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code> and  <code class="docutils literal notranslate"><span class="pre">items()</span></code>. All this methods return <em>views</em> of the items retrieved. This means that each time we invoke them, the values from the dictionary will be returned and the return is not saved anywhere. To better understand this, look at this example:</p>
+<section id="accessing-keys">
+<h4><span class="section-number">6.2.1.5.1. </span>Accessing keys<a class="headerlink" href="#accessing-keys" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_keys</span> <span class="o">=</span> <span class="n">chemical_elements</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">chemical_keys</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;O&#39;, &#39;C&#39;, &#39;Na&#39;, &#39;H&#39;, &#39;K&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Calcium&#39;</span>
+<span class="n">chemical_keys</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;O&#39;, &#39;C&#39;, &#39;Na&#39;, &#39;H&#39;, &#39;K&#39;, &#39;Ca&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to sort the keys, we can use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method.</p>
+</div>
+</aside>
+<p>First of all, as you can see the return type is <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code>. The second thing to note is that, despite that we do not update the values of the variable <code class="docutils literal notranslate"><span class="pre">chemical_keys</span></code>, it implicitly is updated and contains the new value. This is the role of a view, it gives a view of the keys and it <strong>does not keep a copy</strong> of the keys.</p>
+</section>
+<section id="accessing-values">
+<h4><span class="section-number">6.2.1.5.2. </span>Accessing values<a class="headerlink" href="#accessing-values" title="Permalink to this headline">#</a></h4>
+<p>Similarly, to  access the values we can use the <code class="docutils literal notranslate"><span class="pre">values()</span></code> method. Again it will return a view of the dictionary values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_values</span> <span class="o">=</span> <span class="n">chemical_elements</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="n">chemical_values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Oxygen&#39;, &#39;Carbon&#39;, &#39;Sodium&#39;, &#39;Hydrogen&#39;, &#39;Potassium&#39;, &#39;Calcium&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, it returns a <code class="docutils literal notranslate"><span class="pre">dict_values</span></code> type.</p>
+<p>To ensure that there is no copy of data saved in <code class="docutils literal notranslate"><span class="pre">chemical_values</span></code>, we will delete <code class="docutils literal notranslate"><span class="pre">Calcium</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span>
+<span class="n">chemical_values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Oxygen&#39;, &#39;Carbon&#39;, &#39;Sodium&#39;, &#39;Hydrogen&#39;, &#39;Potassium&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, there is no <code class="docutils literal notranslate"><span class="pre">Calcium</span></code> anymore in the values of the dictionary.</p>
+</section>
+<section id="accessing-key-value-pairs">
+<h4><span class="section-number">6.2.1.5.3. </span>Accessing key-value pairs<a class="headerlink" href="#accessing-key-value-pairs" title="Permalink to this headline">#</a></h4>
+<p>To access <code class="docutils literal notranslate"><span class="pre">key-value</span></code> pairs we can use the <code class="docutils literal notranslate"><span class="pre">items()</span></code> method. Again it will return a view.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_pairs</span> <span class="o">=</span> <span class="n">chemical_elements</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="n">chemical_pairs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;O&#39;, &#39;Oxygen&#39;), (&#39;C&#39;, &#39;Carbon&#39;), (&#39;Na&#39;, &#39;Sodium&#39;), (&#39;H&#39;, &#39;Hydrogen&#39;), (&#39;K&#39;, &#39;Potassium&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="searching-dictionaries-for-specific-keys">
+<h3><span class="section-number">6.2.1.6. </span>Searching dictionaries for specific keys<a class="headerlink" href="#searching-dictionaries-for-specific-keys" title="Permalink to this headline">#</a></h3>
+<p>In order to check whether a certain key is in the dictionary we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Ca&#39;</span> <span class="ow">in</span> <span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Ca&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, since there is no entry in the dictionary whose key is <code class="docutils literal notranslate"><span class="pre">Ca</span></code>, the output is <code class="docutils literal notranslate"><span class="pre">False</span></code>. If the key is present then it would output <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Na&#39;</span> <span class="ow">in</span> <span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Na&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="update-method">
+<h3><span class="section-number">6.2.1.7. </span><strong>update()</strong> method<a class="headerlink" href="#update-method" title="Permalink to this headline">#</a></h3>
+<p>To add or update a key-value pair in a dictionary the <code class="docutils literal notranslate"><span class="pre">update()</span></code> method of dictionaries can be used as well. The syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_names</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">key</span><span class="p">:</span><span class="n">value</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>As previously, if the key does not exist in the dictionary, then the key-value pair is added, otherwise the value is simply updated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;N&#39;</span><span class="p">:</span><span class="s1">&#39;Nitrog.&#39;</span><span class="p">})</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;,
+ &#39;N&#39;: &#39;Nitrog.&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see from above, method <code class="docutils literal notranslate"><span class="pre">update()</span></code> added <code class="docutils literal notranslate"><span class="pre">Nitrog.</span></code> to the dictionary. Now if the key existed, it will update the value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;N&#39;</span><span class="p">:</span><span class="s1">&#39;Nitrogen&#39;</span><span class="p">})</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;,
+ &#39;N&#39;: &#39;Nitrogen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method is particularly useful when you want to update values of multiple keys at the same time. While doing that, you can also add new values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s1">&#39;K&#39;</span><span class="p">:</span> <span class="s1">&#39;Potasium&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;P&#39;</span><span class="p">:</span> <span class="s1">&#39;Phosphorus&#39;</span>
+<span class="p">})</span>
+<span class="n">chemical_elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potasium&#39;,
+ &#39;N&#39;: &#39;Nitrogen&#39;,
+ &#39;P&#39;: &#39;Phosphorus&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionary-comprehension">
+<h3><span class="section-number">6.2.1.8. </span>Dictionary comprehension<a class="headerlink" href="#dictionary-comprehension" title="Permalink to this headline">#</a></h3>
+<p>Dictionary comprehensions, just like list comprehensions, are a quick way to create a dictionary. The syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">old_dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+<p>Notice that the syntax above will create a dictionary that is the same as the one we are using (<code class="docutils literal notranslate"><span class="pre">old_dictionary</span></code>). You can use lists, or any other iterable to create the dictionary using the comprehension.</p>
+<p>One use case of dictionary comprehension is when we want to reverse a dictionary given that the values are also <em>unique</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_reverse</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">symbol</span> <span class="k">for</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">chemical_elements</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">chemical_elements_reverse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Oxygen&#39;: &#39;O&#39;,
+ &#39;Carbon&#39;: &#39;C&#39;,
+ &#39;Sodium&#39;: &#39;Na&#39;,
+ &#39;Hydrogen&#39;: &#39;H&#39;,
+ &#39;Potasium&#39;: &#39;K&#39;,
+ &#39;Nitrogen&#39;: &#39;N&#39;,
+ &#39;Phosphorus&#39;: &#39;P&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, we used dictionary comprehension to reverse the dictionary by making keys values and values keys.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that if values are not unique, then the dictionary will simply update the value of the duplicate key.</p>
+</div>
+<p>Let us look at another example. We are going to use a list of tuples to create a dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="mi">31</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;March&#39;</span><span class="p">,</span><span class="mi">31</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">months_dict</span> <span class="o">=</span>  <span class="p">{</span><span class="n">month</span><span class="p">:</span> <span class="n">days</span> <span class="k">for</span> <span class="n">month</span><span class="p">,</span> <span class="n">days</span> <span class="ow">in</span> <span class="n">months</span><span class="p">}</span>
+<span class="n">months_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;January&#39;: 31, &#39;February&#39;: 28, &#39;March&#39;: 31, &#39;April&#39;: 30, &#39;May&#39;: 31}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the dictionary was created by unpacking each of the tuples in the <code class="docutils literal notranslate"><span class="pre">months</span></code>. Note that the keys and values can be modified as well.</p>
+</section>
+<section id="comparing-dictionaries">
+<h3><span class="section-number">6.2.1.9. </span>Comparing dictionaries<a class="headerlink" href="#comparing-dictionaries" title="Permalink to this headline">#</a></h3>
+<p>Unlike lists, two dictionaries are equal if they have the same elements, no matter their order. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;Nitrogen&#39;</span>
+<span class="p">}</span>
+<span class="n">chemical_elements_2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;Hydrogen&#39;</span>
+<span class="p">}</span>
+<span class="n">chemical_elements_1</span> <span class="o">==</span> <span class="n">chemical_elements_2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copying-dictionaries">
+<h3><span class="section-number">6.2.1.10. </span>Copying dictionaries<a class="headerlink" href="#copying-dictionaries" title="Permalink to this headline">#</a></h3>
+<p>The idea of <a class="reference internal" href="../04/03_lists_and_tuples_theory_3.html#ch04-copying-label"><span class="std std-ref">shallow- and deep-copy from Chapter 5</span></a> appears here again. If we do: <code class="docutils literal notranslate"><span class="pre">dict1</span> <span class="pre">=</span> <span class="pre">dict2</span></code>, then we are creating a shallow copy because we are simply adding a second pointer to the memory space of the first dictionary. If we make any changes to <code class="docutils literal notranslate"><span class="pre">dict1</span></code> or <code class="docutils literal notranslate"><span class="pre">dict2</span></code>, then they will appear in the other one as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;O&#39;</span><span class="p">:</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">:</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;N&#39;</span><span class="p">:</span> <span class="s1">&#39;Nitrogen&#39;</span>
+<span class="p">}</span>
+<span class="n">chemical_elements_2</span> <span class="o">=</span> <span class="n">chemical_elements_1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_1&#39;</span><span class="p">,</span> <span class="n">chemical_elements_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_2&#39;</span><span class="p">,</span> <span class="n">chemical_elements_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemical_elements_1 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;}
+chemical_elements_2 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let us change one of the elements in <code class="docutils literal notranslate"><span class="pre">chemical_elements_1</span></code> and <code class="docutils literal notranslate"><span class="pre">chemical_elements_2</span></code> and see what happens:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_1</span><span class="p">[</span><span class="s1">&#39;Ag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Silver&#39;</span>
+<span class="n">chemical_elements_2</span><span class="p">[</span><span class="s1">&#39;Au&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Gold&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_1&#39;</span><span class="p">,</span> <span class="n">chemical_elements_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_2&#39;</span><span class="p">,</span> <span class="n">chemical_elements_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemical_elements_1 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;, &#39;Au&#39;: &#39;Gold&#39;}
+chemical_elements_2 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;, &#39;Au&#39;: &#39;Gold&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, both elements are added in both dictionaries, although each addition was added to only one of them.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">list()</span></code> and <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> are also constructors for lists and tuples, respectively.</p>
+</div>
+</aside>
+<p>To circumvent this, we can use the <code class="docutils literal notranslate"><span class="pre">dictionary1.copy()</span></code> method or the the <code class="docutils literal notranslate"><span class="pre">dict(dictionary1)</span></code> function. The first method will copy the original dictionary’s data into another memory location and will add the pointer to that location. The second method will create a new dictionary from scratch by using the values of the original dictionary. In other words, <code class="docutils literal notranslate"><span class="pre">dict()</span></code> is called a constructor for dictionaries. It is a function that can build/construct dictionaries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_2</span> <span class="o">=</span> <span class="n">chemical_elements_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">chemical_elements_2</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span> <span class="c1"># remove last element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_1&#39;</span><span class="p">,</span> <span class="n">chemical_elements_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_2&#39;</span><span class="p">,</span> <span class="n">chemical_elements_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemical_elements_1 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;, &#39;Au&#39;: &#39;Gold&#39;}
+chemical_elements_2 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the <code class="docutils literal notranslate"><span class="pre">Au:</span> <span class="pre">Gold</span></code> key-value pair is removed only from the second dictionary. The original one is not affected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">chemical_elements_1</span><span class="p">)</span>
+<span class="n">chemical_elements_2</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span> <span class="c1"># remove last element</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_1&#39;</span><span class="p">,</span> <span class="n">chemical_elements_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemical_elements_2&#39;</span><span class="p">,</span> <span class="n">chemical_elements_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemical_elements_1 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;, &#39;Au&#39;: &#39;Gold&#39;}
+chemical_elements_2 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;N&#39;: &#39;Nitrogen&#39;, &#39;Ag&#39;: &#39;Silver&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same happens above, but this time using <code class="docutils literal notranslate"><span class="pre">dict()</span></code>.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="01_sets_and_dictionaries_theory_1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.1. </span>Readings: sets</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="03_sets_and_dictionaries_exercises.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>Exercises</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

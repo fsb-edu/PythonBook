@@ -1,0 +1,1376 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6.1. Readings: sets &#8212; Python and Pandas for Food Scientists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../../_static/ethfavico.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.2. Readings: dictionaries" href="02_sets_and_dictionaries_theory_2.html" />
+    <link rel="prev" title="6. Sets and dictionaries" href="00_sets_and_dictionaries.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/eth_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Pandas for Food Scientists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <center> Python for Food Scientists </center>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01/intro_to_python.html">
+   2. Introduction to Python programming
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/00_control_flow.html">
+   3. If-Else statements and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01_control_flow_theory.html">
+     3.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02_control_flow_exercises.html">
+     3.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03/00_functions.html">
+   4. Functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/01_functions_theory.html">
+     4.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03/02_functions_exercises.html">
+     4.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/00_lists_and_tuples.html">
+   5. Lists and tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01_lists_and_tuples_theory_1.html">
+     5.1. Readings: lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02_lists_and_tuples_theory_2.html">
+     5.2. Readings: tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03_lists_and_tuples_theory_3.html">
+     5.3. Readings: functions and methods for lists and tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04_lists_and_tuples_exercises.html">
+     5.4. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_sets_and_dictionaries.html">
+   6. Sets and dictionaries
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.1. Readings: sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_sets_and_dictionaries_theory_2.html">
+     6.2. Readings: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_sets_and_dictionaries_exercises.html">
+     6.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/00_numpy_arrays.html">
+   7. Numpy arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/01_numpy_arrays_theory.html">
+     7.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/02_numpy_arrays_exercises.html">
+     7.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/00_strings.html">
+   8. Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/01_strings_theory.html">
+     8.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/02_strings_exercises.html">
+     8.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08/00_files%20_exceptions.html">
+   9. Files and exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/01_files%20_exceptions_theory_1.html">
+     9.1. Readings: files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/02_files%20_exceptions_theory_2.html">
+     9.2. Readings: exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/03_files%20_exceptions_exercises.html">
+     9.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/01_solutions_chapter_2.html">
+     10.1. Solutions to Chapter 3 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/02_solutions_chapter_3.html">
+     10.2. Solutions to Chapter 4 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/03_solutions_chapter_4.html">
+     10.3. Solutions to Chapter 5 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/04_solutions_chapter_5.html">
+     10.4. Solutions to Chapter 6 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/05_solutions_chapter_6.html">
+     10.5. Solutions to Chapter 7 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/06_solutions_chapter_7.html">
+     10.6. Solutions to Chapter 8 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/07_solutions_chapter_8.html">
+     10.7. Solutions to Chapter 9 Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://binder.let.ethz.ch/v2/gh/bokulich-lab/PythonBook/main?urlpath=tree/chapters/05/01_sets_and_dictionaries_theory_1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/bokulich-lab/PythonBook/blob/main/chapters/05/01_sets_and_dictionaries_theory_1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook/issues/new?title=Issue%20on%20page%20%2Fchapters/05/01_sets_and_dictionaries_theory_1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/05/01_sets_and_dictionaries_theory_1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets">
+   6.1.1. Sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-set">
+     6.1.1.1. Creating a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-elements-in-a-set">
+     6.1.1.2. Adding elements in a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-elements-from-a-set">
+     6.1.1.3. Removing elements from a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-for-a-value-in-a-set">
+     6.1.1.4. Searching for a value in a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-comparison">
+     6.1.1.5. Set Comparison
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-comprehension">
+     6.1.1.6. Set comprehension
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-operators-optional">
+     6.1.1.7. Set operators (Optional)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-union">
+       6.1.1.7.1. Set union
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-intersection">
+       6.1.1.7.2. Set intersection
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-difference">
+       6.1.1.7.3. Set difference
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#disjoint-sets">
+       6.1.1.7.4. Disjoint sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frozenset-optional">
+     6.1.1.8. Frozenset (Optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Readings: sets</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sets">
+   6.1.1. Sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-a-set">
+     6.1.1.1. Creating a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-elements-in-a-set">
+     6.1.1.2. Adding elements in a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-elements-from-a-set">
+     6.1.1.3. Removing elements from a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-for-a-value-in-a-set">
+     6.1.1.4. Searching for a value in a set
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-comparison">
+     6.1.1.5. Set Comparison
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-comprehension">
+     6.1.1.6. Set comprehension
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-operators-optional">
+     6.1.1.7. Set operators (Optional)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-union">
+       6.1.1.7.1. Set union
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-intersection">
+       6.1.1.7.2. Set intersection
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-difference">
+       6.1.1.7.3. Set difference
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#disjoint-sets">
+       6.1.1.7.4. Disjoint sets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frozenset-optional">
+     6.1.1.8. Frozenset (Optional)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="readings-sets">
+<h1><span class="section-number">6.1. </span>Readings: sets<a class="headerlink" href="#readings-sets" title="Permalink to this headline">#</a></h1>
+<section id="sets">
+<h2><span class="section-number">6.1.1. </span>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h2>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sets are <em>unchangeable</em>, <em>unordered</em> and cannot be <em>indexed</em>. They do not allow duplicate elements.</p>
+</div>
+</aside>
+<p>Sets are collections of values. What sets them apart from lists and tuples is that sets do not allow <em>duplicate</em> elements. In addition, sets are <em>unordered</em>, which means that we cannot access elements of a set by indexing. Also sets do not support slicing. In addition, they are <em>unchangeable</em>, since we cannot modify an element that is already added there, but we can add and remove elements.</p>
+<section id="creating-a-set">
+<h3><span class="section-number">6.1.1.1. </span>Creating a set<a class="headerlink" href="#creating-a-set" title="Permalink to this headline">#</a></h3>
+<p>The syntax to define a set is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">set_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">,</span> <span class="n">element3</span><span class="p">,</span><span class="o">....</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Potassium&#39;</span><span class="p">,</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxygen&#39;</span>
+<span class="p">}</span>
+<span class="n">chemicals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hydrogen&#39;, &#39;Nitrogen&#39;, &#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The order in which the items appear is not important, since sets are unordered.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">len()</span></code> function to determine the number of elements in a set.</p>
+</div>
+</aside>
+<p>As you can see, although <code class="docutils literal notranslate"><span class="pre">Oxygen</span></code> is specified twice in the creation of the set, it is added only once.</p>
+<p>We can also create sets by using the <code class="docutils literal notranslate"><span class="pre">set()</span></code> function. This function receives a collection of values and builds a set from it. <code class="docutils literal notranslate"><span class="pre">set()</span></code> function is called a constructor since it is used to build/construct a set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_values</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Potassium&#39;</span><span class="p">,</span> <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxygen&#39;</span>
+<span class="p">]</span>
+<span class="n">chemicals_1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">list_of_values</span><span class="p">)</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Hydrogen&#39;, &#39;Nitrogen&#39;, &#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, <code class="docutils literal notranslate"><span class="pre">Oxygen</span></code> appears only once.</p>
+<p>Also, we can use a for-loop to iterate over the values of a set:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">el</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Potassium Hydrogen Sodium Oxygen Nitrogen 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-elements-in-a-set">
+<h3><span class="section-number">6.1.1.2. </span>Adding elements in a set<a class="headerlink" href="#adding-elements-in-a-set" title="Permalink to this headline">#</a></h3>
+<p>There are two ways to add elements in a set: by using the <code class="docutils literal notranslate"><span class="pre">add()</span></code> and <code class="docutils literal notranslate"><span class="pre">update()</span></code> methods. <code class="docutils literal notranslate"><span class="pre">add()</span></code> is used to add a single value, while <code class="docutils literal notranslate"><span class="pre">update()</span></code> can add any iterable.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition-adding-elements-in-a-set admonition">
+<p class="admonition-title">Adding elements in a set</p>
+<p>To add elements to a set use: <code class="docutils literal notranslate"><span class="pre">add()</span></code> or <code class="docutils literal notranslate"><span class="pre">update()</span></code>.</p>
+</div>
+</aside>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span><span class="p">)</span>
+<span class="n">chemicals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Carbon&#39;, &#39;Hydrogen&#39;, &#39;Nitrogen&#39;, &#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s1">&#39;Calcium&#39;</span><span class="p">,</span><span class="s1">&#39;Magnesium&#39;</span><span class="p">,</span><span class="s1">&#39;Aluminum&#39;</span><span class="p">])</span>
+<span class="n">chemicals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Aluminum&#39;,
+ &#39;Calcium&#39;,
+ &#39;Carbon&#39;,
+ &#39;Hydrogen&#39;,
+ &#39;Magnesium&#39;,
+ &#39;Nitrogen&#39;,
+ &#39;Oxygen&#39;,
+ &#39;Potassium&#39;,
+ &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the order in which elements are added is not important. In our case, the elements in the set are ordered alphabetically.</p>
+</section>
+<section id="removing-elements-from-a-set">
+<h3><span class="section-number">6.1.1.3. </span>Removing elements from a set<a class="headerlink" href="#removing-elements-from-a-set" title="Permalink to this headline">#</a></h3>
+<p>For removing elements these methods can be used: <code class="docutils literal notranslate"><span class="pre">remove()</span></code>, <code class="docutils literal notranslate"><span class="pre">discard()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code>. <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method can be used to delete all elements of the set but <em>not the set itself</em>.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">remove(element_name)</span></code> will remove the specified element and if that does not exist it will raise a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition-removing-elements-from-a-set admonition">
+<p class="admonition-title">Removing elements from a set</p>
+<p>Methods used to remove elements from a set: <code class="docutils literal notranslate"><span class="pre">remove()</span></code>, <code class="docutils literal notranslate"><span class="pre">discard()</span></code>, <code class="docutils literal notranslate"><span class="pre">pop()</span></code>, <code class="docutils literal notranslate"><span class="pre">clear()</span></code>. <code class="docutils literal notranslate"><span class="pre">del</span></code> deletes the set entirely.</p>
+</div>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Hydrogen&#39;</span><span class="p">)</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Nitrogen&#39;, &#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span><span class="p">)</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">7</span><span class="n">nw_x13n5q965rss_qz6061m0000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_57703</span><span class="o">/</span><span class="mf">2546945945.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chemicals_1</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">chemicals_1</span>
+
+<span class="ne">KeyError</span>: &#39;Carbon&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">discard(element_name)</span></code> does the same but if the element does not exist then it does not raise an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">&#39;Nitrogen&#39;</span><span class="p">)</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span><span class="p">)</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Oxygen&#39;, &#39;Potassium&#39;, &#39;Sodium&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method removes a random element from the set. Since sets are unordered, it will select an element (we as programmers cannot affect which element is selected) at random and will remove it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Set after popping an element: &#39;</span><span class="p">,</span> <span class="n">chemicals_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Potassium
+Set after popping an element:  {&#39;Sodium&#39;, &#39;Oxygen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to clear a set from all the elements we can use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <strong>del</strong> keyword deletes the set entirely from the runtime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">chemicals_1</span>
+<span class="n">chemicals_1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">7</span><span class="n">nw_x13n5q965rss_qz6061m0000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_57703</span><span class="o">/</span><span class="mf">1218415494.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">del</span> <span class="n">chemicals_1</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">chemicals_1</span>
+
+<span class="ne">NameError</span>: name &#39;chemicals_1&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, there is no variable anymore in the runtime that is called <code class="docutils literal notranslate"><span class="pre">chemicals_1</span></code>, that is why we get a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
+</section>
+<section id="searching-for-a-value-in-a-set">
+<h3><span class="section-number">6.1.1.4. </span>Searching for a value in a set<a class="headerlink" href="#searching-for-a-value-in-a-set" title="Permalink to this headline">#</a></h3>
+<p>To check whether a value is in the set we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> or <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operators. As we have seen in the previous chapters, if the value is present, the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">True</span></code> and the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">False</span></code>. If the value is not present, then <code class="docutils literal notranslate"><span class="pre">in</span></code> will return <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> will return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Oxygen&#39;</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Carbon&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Oxygen&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-comparison">
+<h3><span class="section-number">6.1.1.5. </span>Set Comparison<a class="headerlink" href="#set-comparison" title="Permalink to this headline">#</a></h3>
+<p>We can use comparison operators introduced in <a class="reference internal" href="../01/intro_to_python.html#comp-op-ch2-label"><span class="std std-ref">Chapter 2</span></a> to compare two sets. Two sets are equal (<code class="docutils literal notranslate"><span class="pre">==</span></code>) if they have the same elements no matter their order. Otherwise, they are not equal.</p>
+<p>Let us look at an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Aluminum&#39;</span><span class="p">,</span> <span class="s1">&#39;Calcium&#39;</span><span class="p">,</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Magnesium&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Sodium&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;Potassium&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemicals =&#39;</span><span class="p">,</span> <span class="n">chemicals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemicals_1 =&#39;</span><span class="p">,</span> <span class="n">chemicals_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chemicals_1</span> <span class="o">==</span> <span class="n">chemicals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemicals = {&#39;Potassium&#39;, &#39;Hydrogen&#39;, &#39;Carbon&#39;, &#39;Aluminum&#39;, &#39;Sodium&#39;, &#39;Calcium&#39;, &#39;Oxygen&#39;, &#39;Nitrogen&#39;, &#39;Magnesium&#39;}
+chemicals_1 = {&#39;Potassium&#39;, &#39;Hydrogen&#39;, &#39;Carbon&#39;, &#39;Aluminum&#39;, &#39;Sodium&#39;, &#39;Calcium&#39;, &#39;Oxygen&#39;, &#39;Nitrogen&#39;, &#39;Magnesium&#39;}
+True
+</pre></div>
+</div>
+</div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In contrast to the lists, two sets are equal if they have the same elements no matter their order.</p>
+</div>
+</aside>
+<p>As you can see, elements in <code class="docutils literal notranslate"><span class="pre">chemicals_1</span></code> do not have the same order as <code class="docutils literal notranslate"><span class="pre">chemicals</span></code>. But they have the same elements, as a result both sets are equal.</p>
+<p>On the other hand:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals_2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Aluminum&#39;</span><span class="p">,</span> <span class="s1">&#39;Calcium&#39;</span><span class="p">,</span> <span class="s1">&#39;Carbon&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemicals =&#39;</span><span class="p">,</span> <span class="n">chemicals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chemicals_2 =&#39;</span><span class="p">,</span> <span class="n">chemicals_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chemicals_2</span> <span class="o">==</span> <span class="n">chemicals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chemicals = {&#39;Potassium&#39;, &#39;Hydrogen&#39;, &#39;Carbon&#39;, &#39;Aluminum&#39;, &#39;Sodium&#39;, &#39;Calcium&#39;, &#39;Oxygen&#39;, &#39;Nitrogen&#39;, &#39;Magnesium&#39;}
+chemicals_2 = {&#39;Calcium&#39;, &#39;Aluminum&#39;, &#39;Carbon&#39;}
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, <code class="docutils literal notranslate"><span class="pre">chemicals_2</span></code> is not equal to <code class="docutils literal notranslate"><span class="pre">chemicals</span></code> because they do not have the same elements.</p>
+<p>We say that subset A is a <strong>proper subset</strong> of set B if all elements of A are contained in B, but not all elements of B are contained in A. In other words, A and B are not equal, but B contains all elements of A. To check if A is a proper subset of B we can use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> (strictly less than) operator. The <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator checks whether the set on its left is a proper subset of the set on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We say that subset A is an <strong>improper subset</strong> of set B if all elements of A are contained in B, and all elements of B may be in A. In other words, A and B can be equal, but surely B contains all elements of A. To check if A is a improper subset of B we can use the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> (strictly less than or equal to) operator. The <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> operator checks whether the set on its left is an improper subset of the set on the right.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you see from the examples above, in case that the sets are equal, the <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> is commutative. Also, a proper subset is an improper subset as well, but not the other way round.</p>
+<p>Equivalently there is the <code class="docutils literal notranslate"><span class="pre">issubset()</span></code> method to check for improper subsets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Symmetrically, we can find if set B is a <strong>proper or improper superset</strong> of A by using the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (greater than) or <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (greater than or equal to) operators, respectively. For clarity, B is a <strong>proper superset</strong> of A if all elements of A are part of B and A and B are <em>not</em> equal. While B is an <strong>improper superset</strong> of A, if all elements of A are part of B and A and B might be equal. We can also use the <code class="docutils literal notranslate"><span class="pre">issuperset()</span></code> method to check for an improper superset.</p>
+</section>
+<section id="set-comprehension">
+<h3><span class="section-number">6.1.1.6. </span>Set comprehension<a class="headerlink" href="#set-comprehension" title="Permalink to this headline">#</a></h3>
+<p>If you remember from the previous chapter, we defined list comprehensions using <code class="docutils literal notranslate"><span class="pre">[]</span></code>, since list elements were defined inside <code class="docutils literal notranslate"><span class="pre">[]</span></code>. For sets, we will define the set comprehension inside <code class="docutils literal notranslate"><span class="pre">{}</span></code>, since set elements are inside <code class="docutils literal notranslate"><span class="pre">{}</span></code>. In the next example, we will use a list that contains duplicate elements to create a set using list comprehension:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemicals</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;Hydrogen&#39;</span><span class="p">,</span> <span class="s1">&#39;Carbon&#39;</span>
+<span class="p">]</span>
+<span class="n">set_from_list</span> <span class="o">=</span> <span class="p">{</span><span class="n">element</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">chemicals</span><span class="p">}</span>
+<span class="n">set_from_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Carbon&#39;, &#39;Hydrogen&#39;, &#39;Nitrogen&#39;, &#39;Oxygen&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the set does not contain duplicate elements anymore.</p>
+</section>
+<section id="set-operators-optional">
+<h3><span class="section-number">6.1.1.7. </span>Set operators (Optional)<a class="headerlink" href="#set-operators-optional" title="Permalink to this headline">#</a></h3>
+<section id="set-union">
+<h4><span class="section-number">6.1.1.7.1. </span>Set union<a class="headerlink" href="#set-union" title="Permalink to this headline">#</a></h4>
+<figure class="align-center" id="set-union-assign">
+<img alt="set_union_illustration" class="ch6" src="../../_images/set_union.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Set Union</span><a class="headerlink" href="#set-union-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The union of two sets is another set that contains the elements of both sets. To find the union of two sets you can use the <code class="docutils literal notranslate"><span class="pre">|</span></code> operator or the <code class="docutils literal notranslate"><span class="pre">union()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5}
+{1, 2, 3, 4, 5}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">union()</span></code> can take any iterable as argument. Before it applies the method, it will convert it to a set and then perform the operation on two sets.</p>
+</div>
+</section>
+<section id="set-intersection">
+<h4><span class="section-number">6.1.1.7.2. </span>Set intersection<a class="headerlink" href="#set-intersection" title="Permalink to this headline">#</a></h4>
+<figure class="align-center" id="set-intersection-assign">
+<img alt="set_intersection_illustration" class="ch6" src="../../_images/intersection.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Set Intersection</span><a class="headerlink" href="#set-intersection-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Similarly, you can use the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or the <code class="docutils literal notranslate"><span class="pre">intersection()</span></code> method to find the common elements of two sets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4}
+{1, 2, 3, 4}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, both ways output the common elements of both sets.</p>
+</section>
+<section id="set-difference">
+<h4><span class="section-number">6.1.1.7.3. </span>Set difference<a class="headerlink" href="#set-difference" title="Permalink to this headline">#</a></h4>
+<figure class="align-center" id="set-difference-assign">
+<img alt="set_difference_illustration" class="ch6" src="../../_images/set_difference.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Set Difference</span><a class="headerlink" href="#set-difference-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The set difference is another set that contains only the elements of the first set that are not part of the second set. To find the set difference we can use the <code class="docutils literal notranslate"><span class="pre">-</span></code> operator or the <code class="docutils literal notranslate"><span class="pre">difference()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
+set()
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, both ways return an empty set because there are no elements in <code class="docutils literal notranslate"><span class="pre">a</span></code> that are not in <code class="docutils literal notranslate"><span class="pre">b</span></code>. Let us check the difference between <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> now:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{5}
+{5}
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the second case, <code class="docutils literal notranslate"><span class="pre">5</span></code> is  the element that is in <code class="docutils literal notranslate"><span class="pre">b</span></code> but not in <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<figure class="align-center" id="symmetric-set-difference-assign">
+<img alt="symmetric_set_difference_illustration" class="ch6" src="../../_images/symmetric_set_difference.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Symmetric Set Difference</span><a class="headerlink" href="#symmetric-set-difference-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The symmetric set difference on the other hand, returns a set that the elements that are not common in any of the sets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">^</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">symmetric_difference</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{5}
+{5}
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is like taking the union of the two set differences <code class="docutils literal notranslate"><span class="pre">a-b</span></code> and <code class="docutils literal notranslate"><span class="pre">b-a</span></code>.</p>
+</section>
+<section id="disjoint-sets">
+<h4><span class="section-number">6.1.1.7.4. </span>Disjoint sets<a class="headerlink" href="#disjoint-sets" title="Permalink to this headline">#</a></h4>
+<figure class="align-center" id="set-disjoint-assign">
+<img alt="set_disjoint_illustration" class="ch6" src="../../_images/set_disjoint.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Disjoint Sets</span><a class="headerlink" href="#set-disjoint-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Two sets are disjoint if they do not have any elements in common. To check whether to sets are disjoint or not we can use the <code class="docutils literal notranslate"><span class="pre">isdisjoint()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>It returns a boolean value that indicates if two sets are disjoint or not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">}</span>
+<span class="n">a</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="frozenset-optional">
+<h3><span class="section-number">6.1.1.8. </span>Frozenset (Optional)<a class="headerlink" href="#frozenset-optional" title="Permalink to this headline">#</a></h3>
+<p>Frozensets are immutable sets. As we have seen so far, sets are <em>mutable</em> since we can modify them by adding or removing elements. However, set elements <strong>must be immutable</strong>. This means that they cannot be modified. Thus, a frozenset is an <strong>immutable</strong> set. This means that once it is created, it cannot be modified. A frozenset can be created by using the built-in function <code class="docutils literal notranslate"><span class="pre">frozenset()</span></code> that takes as input any iterable and creates the frozen set from its elements.</p>
+<p>Next on, we will explore dictionaries.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/05"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="00_sets_and_dictionaries.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Sets and dictionaries</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_sets_and_dictionaries_theory_2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.2. </span>Readings: dictionaries</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

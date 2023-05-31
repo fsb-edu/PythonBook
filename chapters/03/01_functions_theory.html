@@ -1,0 +1,1224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.1. Readings &#8212; Python and Pandas for Food Scientists</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/general.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../../_static/ethfavico.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.2. Exercises" href="02_functions_exercises.html" />
+    <link rel="prev" title="4. Functions" href="00_functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/eth_logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Pandas for Food Scientists</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    <center> Python for Food Scientists </center>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../00/introduction.html">
+   1. Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01/intro_to_python.html">
+   2. Introduction to Python programming
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02/00_control_flow.html">
+   3. If-Else statements and loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/01_control_flow_theory.html">
+     3.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02/02_control_flow_exercises.html">
+     3.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="00_functions.html">
+   4. Functions
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_functions_exercises.html">
+     4.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04/00_lists_and_tuples.html">
+   5. Lists and tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/01_lists_and_tuples_theory_1.html">
+     5.1. Readings: lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/02_lists_and_tuples_theory_2.html">
+     5.2. Readings: tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/03_lists_and_tuples_theory_3.html">
+     5.3. Readings: functions and methods for lists and tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04/04_lists_and_tuples_exercises.html">
+     5.4. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/00_sets_and_dictionaries.html">
+   6. Sets and dictionaries
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/01_sets_and_dictionaries_theory_1.html">
+     6.1. Readings: sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/02_sets_and_dictionaries_theory_2.html">
+     6.2. Readings: dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/03_sets_and_dictionaries_exercises.html">
+     6.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/00_numpy_arrays.html">
+   7. Numpy arrays
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/01_numpy_arrays_theory.html">
+     7.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/02_numpy_arrays_exercises.html">
+     7.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../07/00_strings.html">
+   8. Strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/01_strings_theory.html">
+     8.1. Readings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../07/02_strings_exercises.html">
+     8.2. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../08/00_files%20_exceptions.html">
+   9. Files and exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/01_files%20_exceptions_theory_1.html">
+     9.1. Readings: files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/02_files%20_exceptions_theory_2.html">
+     9.2. Readings: exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08/03_files%20_exceptions_exercises.html">
+     9.3. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../solutions/00_solutions.html">
+   10. Solutions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/01_solutions_chapter_2.html">
+     10.1. Solutions to Chapter 3 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/02_solutions_chapter_3.html">
+     10.2. Solutions to Chapter 4 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/03_solutions_chapter_4.html">
+     10.3. Solutions to Chapter 5 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/04_solutions_chapter_5.html">
+     10.4. Solutions to Chapter 6 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/05_solutions_chapter_6.html">
+     10.5. Solutions to Chapter 7 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/06_solutions_chapter_7.html">
+     10.6. Solutions to Chapter 8 Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../solutions/07_solutions_chapter_8.html">
+     10.7. Solutions to Chapter 9 Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://binder.let.ethz.ch/v2/gh/bokulich-lab/PythonBook/main?urlpath=tree/chapters/03/01_functions_theory.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/bokulich-lab/PythonBook/blob/main/chapters/03/01_functions_theory.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/bokulich-lab/PythonBook/issues/new?title=Issue%20on%20page%20%2Fchapters/03/01_functions_theory.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/chapters/03/01_functions_theory.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-functions">
+   4.1.1. What are functions?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-default-values">
+   4.1.2. Functions with default values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-arbitrary-many-arguments">
+   4.1.3. Functions with arbitrary many arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-of-a-variable">
+   4.1.4. Scope of a variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-from-import-statemets">
+   4.1.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from
+    </span>
+    <span class="pre">
+     ...
+    </span>
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   statemets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-methods-optional">
+   4.1.6. What are methods? (Optional)
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Readings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-functions">
+   4.1.1. What are functions?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-default-values">
+   4.1.2. Functions with default values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-with-arbitrary-many-arguments">
+   4.1.3. Functions with arbitrary many arguments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scope-of-a-variable">
+   4.1.4. Scope of a variable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-from-import-statemets">
+   4.1.5.
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   and
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     from
+    </span>
+    <span class="pre">
+     ...
+    </span>
+    <span class="pre">
+     import
+    </span>
+    <span class="pre">
+     ...
+    </span>
+   </code>
+   statemets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-methods-optional">
+   4.1.6. What are methods? (Optional)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="readings">
+<h1><span class="section-number">4.1. </span>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">#</a></h1>
+<section id="what-are-functions">
+<h2><span class="section-number">4.1.1. </span>What are functions?<a class="headerlink" href="#what-are-functions" title="Permalink to this headline">#</a></h2>
+<p><strong>Functions</strong> are blocks of code that help us <em>reuse</em> code. The structure  of a function looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span> <span class="p">(</span><span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">):</span>
+    <span class="n">body</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span>
+    <span class="k">return</span> <span class="n">something</span>
+</pre></div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case where a function does not need any parameters, then the function definition would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</aside>
+<p>A function definition always starts with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, followed by the function name. We are free to name functions the way we like, but just as in the case of naming variables, it is important to give meaningful names to functions so that it is easy to understand what they do. After the function name, a list of parameters is enclosed in parentheses. These are variables that will be used in the body of the function. Note that the parameters’ list might be empty as well. After that, <code class="docutils literal notranslate"><span class="pre">:</span></code> indicates the end of the function definition. Then the declaration of the body of the function begins. Usually, we find the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement at the end of the function body (indicateing what will be returned by the function - in some cases, though, that statement may be ommited (if we don’t want to return anything).</p>
+<p>To call a function you simply write the function name followed by the provided parameters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">function_name</span><span class="p">(</span><span class="n">paramater1_value</span><span class="p">,</span> <span class="n">paramater2_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Suppose that we want to find the minimum value of three numbers that are between 0 and 100. From what we have learned so far, a possible solution would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">no_2</span> <span class="o">=</span> <span class="mi">44</span>
+<span class="n">no_3</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">no_1</span>
+<span class="k">if</span> <span class="n">no_1</span> <span class="o">&gt;</span> <span class="n">no_2</span><span class="p">:</span>
+    <span class="n">min_value</span> <span class="o">=</span> <span class="n">no_2</span>
+<span class="k">if</span> <span class="n">no_2</span> <span class="o">&gt;</span> <span class="n">no_3</span><span class="p">:</span>
+    <span class="n">min_value</span> <span class="o">=</span> <span class="n">no_3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">min_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Did you notice something here? <code class="docutils literal notranslate"><span class="pre">print()</span></code> is a function as well, but a built-in one.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p><em><strong>Python Standard Library</strong></em> provides a lot of already-written, built-in and tested functions. The availability of such functions makes Python one of the most popular programming languages. Before you write your own function it is a good idea to have a look at the Python Standard Library because it might already contain the function needed. <a class="reference external" href="https://docs.python.org/3/library/">Here</a> you can find the official documentation.</p>
+</div>
+<p>Now, imagine that after some lines of code we would need again to find the minimum of 3 numbers. We could copy-paste the code block from above, change the numbers that we provided and get the minimum. After some time, the conditions change and we need to compare 4 numbers instead of 3. We have to go and change every single copy-pasted block that computes the minimum. In this tedious process, we might forget a block or even worse, we might introduce mistakes in one of them without noticing at all. So instead, we switch to using <strong>functions</strong>.</p>
+<p>Below you can find the implementation of the function to find the minimum value of 3 numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_minimum</span><span class="p">(</span><span class="n">no_1</span><span class="p">,</span> <span class="n">no_2</span><span class="p">,</span> <span class="n">no_3</span><span class="p">):</span>
+    <span class="n">min_value</span> <span class="o">=</span> <span class="n">no_1</span>
+    <span class="k">if</span> <span class="n">min_value</span> <span class="o">&gt;</span> <span class="n">no_2</span><span class="p">:</span>
+        <span class="n">min_value</span> <span class="o">=</span> <span class="n">no_2</span>
+    <span class="k">if</span> <span class="n">min_value</span> <span class="o">&gt;</span> <span class="n">no_3</span><span class="p">:</span>
+        <span class="n">min_value</span> <span class="o">=</span> <span class="n">no_3</span>
+    <span class="k">return</span> <span class="n">min_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here we use the function we have just declared:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum of {20, 35, 44} is&#39;</span><span class="p">,</span> <span class="n">find_minimum</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">44</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum of {27, 40, 63} is&#39;</span><span class="p">,</span> <span class="n">find_minimum</span><span class="p">(</span><span class="mi">63</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">27</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum of {53, 44, 89} is&#39;</span><span class="p">,</span> <span class="n">find_minimum</span><span class="p">(</span><span class="mi">53</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">89</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum of {20, 35, 44} is 20
+The minimum of {27, 40, 63} is 27
+The minimum of {53, 44, 89} is 44
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s look at what happened here: everything starts with the call to the <em>print</em> function that prints the first string and then evaluates the second argument which is the call to the function <strong>find_minimum</strong>. When we call the function, we provide values for the arguments that its expects, that are 3 numbers. Then, the control flow goes inside the body of our function, assigns the value of <code class="docutils literal notranslate"><span class="pre">no_1</span></code> to the <code class="docutils literal notranslate"><span class="pre">min_value</span></code> variable. Next, its starts checking if <code class="docutils literal notranslate"><span class="pre">no_2</span></code> is smaller than the <code class="docutils literal notranslate"><span class="pre">min_value</span></code> and if so, we assign the value of <code class="docutils literal notranslate"><span class="pre">no_2</span></code> to the <code class="docutils literal notranslate"><span class="pre">min_value</span></code>. The last check is done with the <code class="docutils literal notranslate"><span class="pre">no_3</span></code> variable. If its value is less than the value of <code class="docutils literal notranslate"><span class="pre">min_value</span></code>, then we assign its value to the <code class="docutils literal notranslate"><span class="pre">min_value</span></code> variable. At the end in the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, we return the value of the smallest number. After the function finishes its execution, the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement brings the control back to the <code class="docutils literal notranslate"><span class="pre">print</span></code> function and prints the whole statement by appending to the string the smallest number.</p>
+<p>Now, if we would like to declare a function that would find the minimum of 4 numbers it would be much easier and we would not have to repeat any code and using the ternary operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_minimum_of_four</span><span class="p">(</span><span class="n">no_1</span><span class="p">,</span> <span class="n">no_2</span><span class="p">,</span> <span class="n">no_3</span><span class="p">,</span> <span class="n">no_4</span><span class="p">):</span>
+    <span class="n">min_of_three</span> <span class="o">=</span> <span class="n">find_minimum</span><span class="p">(</span><span class="n">no_1</span><span class="p">,</span> <span class="n">no_2</span><span class="p">,</span> <span class="n">no_3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">min_of_three</span> <span class="k">if</span> <span class="n">min_of_three</span> <span class="o">&lt;</span> <span class="n">no_4</span> <span class="k">else</span> <span class="n">no_4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The minimum of {20, 35, 15, 30} is&#39;</span><span class="p">,</span> <span class="n">find_minimum_of_four</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The minimum of {20, 35, 15, 30} is 15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-parameters-vs-arguments admonition">
+<p class="admonition-title">Parameters vs Arguments</p>
+<p>Sometimes the words <code class="docutils literal notranslate"><span class="pre">parameters</span></code> and <code class="docutils literal notranslate"><span class="pre">arguments</span></code> are used interchangeably when it comes to functions. They refer to the same thing. Parameters are the variables in the function header/declaration while the arguments are the actual values passed for each of the parameters when we call the function.</p>
+</div>
+<figure class="align-center" id="params-vs-args-assign">
+<img alt="params_vs_args_illustration" class="ch4" src="../../_images/params_vs_args.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Parameters vs Arguments</span><a class="headerlink" href="#params-vs-args-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="functions-with-default-values">
+<h2><span class="section-number">4.1.2. </span>Functions with default values<a class="headerlink" href="#functions-with-default-values" title="Permalink to this headline">#</a></h2>
+<p>When declaring a function, we can specify some values for the parameters directly in the parameters list. In this case, we will have a function with <strong>default parameter values</strong>. This means that when you call the function and do not provide any argument for this parameter, then the function body will use the default parameter specified in the function header to make the computations.</p>
+<p>For example, we can define a function to compute the sum of two numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num_1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_2</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num_1</span> <span class="o">+</span> <span class="n">num_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we have specified a default value for both of the parameters. This allows us to call the function by not specifying any arguments at all, one argument or both of them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sum is 3
+The sum is 5
+The sum is 11
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we do not specify any argument to pass to the function, then the calculation is made by using the default values of <code class="docutils literal notranslate"><span class="pre">num_1=1</span></code> and <code class="docutils literal notranslate"><span class="pre">num_2=2</span></code>. When we pass only one argument then the default value of <code class="docutils literal notranslate"><span class="pre">num_1</span></code> is overwritten with the value <code class="docutils literal notranslate"><span class="pre">3</span></code> and the second parameter retains its default value, ths we have the result: 5. In the last case, both default values of the parameter are overwritten and we have their sum 11 printed.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We can also pass values of each parameter using their names in the function call. These are called <strong>keyword arguments</strong>. Passing parameter values in this way allows you to change the order of the arguments. For example:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="n">num_2</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="n">num_2</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">num_1</span><span class="o">=</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sum is 3
+The sum is 4
+The sum is 11
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-with-arbitrary-many-arguments">
+<h2><span class="section-number">4.1.3. </span>Functions with arbitrary many arguments<a class="headerlink" href="#functions-with-arbitrary-many-arguments" title="Permalink to this headline">#</a></h2>
+<p>In Python it is possible for a function to receive arbitrarily many arguments each time it is called. This is done in the function header. Instead of listing all expected arguments one by one, you can just write <code class="docutils literal notranslate"><span class="pre">*parameter_name</span></code>, where you can choose whatever name you want for <code class="docutils literal notranslate"><span class="pre">parameter_name</span></code>. In this way by using a <em>for-loop</em> you can iterate over the list of arguments passed to the function. This is useful when you do not know beforehand how many arguments will be passed to the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_many_numbers</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">number</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add_many_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum is&#39;</span><span class="p">,</span> <span class="n">add_many_numbers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sum is 33
+The sum is 25
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a way to specify arbitrary keyword arguments as well. In this case, in the parameters of the function definition you should specify <code class="docutils literal notranslate"><span class="pre">**parameter_name</span></code>. Again for the <code class="docutils literal notranslate"><span class="pre">parameter_name</span></code> you can specify any valid variable name that you want.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">name</span></code> in this case is a dictionary. We will study them in Chapter 6.</p>
+</div>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">full_name</span><span class="p">(</span><span class="o">**</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Full name is&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">],</span> <span class="n">name</span><span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">full_name</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Smith&#39;</span><span class="p">)</span>
+<span class="n">full_name</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">middle_name</span><span class="o">=</span><span class="s1">&#39;J.&#39;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Smith&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Full name is John Smith
+Full name is John Smith
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here in this example, no mater how many <em><strong>keyword arguments</strong></em> the user specifies when calling the function, inside the function we use only the ones that correspond to the <em>keys</em> <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">last_name</span></code>.</p>
+</section>
+<section id="scope-of-a-variable">
+<h2><span class="section-number">4.1.4. </span>Scope of a variable<a class="headerlink" href="#scope-of-a-variable" title="Permalink to this headline">#</a></h2>
+<p>Each variable has a <strong>scope</strong>. The scope of a variable determines where in the code the variable can be used. A variable that is declared inside a block, be it a loop, an if/else block or a function is said to have <strong>local scope</strong>. This means that the variable can be used inside the block, from the point it is declared until the end of the block, outside it is <strong>outside of scope</strong>, hence it is not recognized. On the other hand, variables that are outside of any block, are <strong>global variables</strong> and they have <strong>global scope</strong>, they can be accessed from everywhere in the program.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<div class="admonition-local-scope admonition">
+<p class="admonition-title">Local Scope</p>
+<p>Variables can be accessed from the point they are declared until the end of the block where they are declared. Outside of these boundaries they are <strong>out of scope</strong> and not recognized.</p>
+</div>
+<div class="admonition-global-scope admonition">
+<p class="admonition-title">Global Scope</p>
+<p>Variables are not declared within a block but in the global workspace, thus they can be accessed from anywhere within the program.</p>
+</div>
+</div>
+<figure class="align-center" id="scope-of-variables-assign">
+<img alt="scope_of_variables_illustration" class="ch4" src="../../_images/scope_of_variables.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Scope of Variables</span><a class="headerlink" href="#scope-of-variables-assign" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Imagine blocks as functions here.</p>
+</div>
+</aside>
+<p><a class="reference internal" href="#scope-of-variables-assign"><span class="std std-numref">Fig. 4.2</span></a> shows how variables declared inside nested blocks can be accessed. Block 1 is the outer block. Variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is declared there. This means that <code class="docutils literal notranslate"><span class="pre">x</span></code> can be accessed from the point of declaration until the end of block 1. Since block 1 encloses all the other blocks, this means that <code class="docutils literal notranslate"><span class="pre">x</span></code> can be accessed in all these blocks (indicated by the red dashed line that cuts all other blocks). Variable <code class="docutils literal notranslate"><span class="pre">y</span></code> is declared in block 2. It cannot be accessed in block 1, but it can be accessed in blocks 3 and 4, besides block 2 where it is declared, thus complying with the <strong>local scope</strong> rule. Similarly, variable <code class="docutils literal notranslate"><span class="pre">z</span></code> is accessed only in blocks 3 and 4, while variable <code class="docutils literal notranslate"><span class="pre">w</span></code> can only be accessed in block 4.</p>
+<p>Below you can see some code examples to understand how the scope of a variable affects the outcomes of a piece of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">print_value_of_x</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Global value of x printed:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">print_value_of_x_y_local</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Local value of x overrides global value of x:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Local value of y:&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_value_of_x</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------&#39;</span><span class="p">)</span>
+<span class="n">print_value_of_x_y_local</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Global value of x:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;unchanged&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Value of y:&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Global value of x printed: 5
+----------
+Local value of x overrides global value of x: 10
+Local value of y: 20
+----------
+Global value of x: 5 unchanged
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Global value of x:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;unchanged&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Value of y:&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see, the value of <code class="docutils literal notranslate"><span class="pre">x=5</span></code> is a global variable since it is not declared within any block or any function. Thus, it can be accessed from within the function <code class="docutils literal notranslate"><span class="pre">print_value_of_x()</span></code>. On the other hand, in the <code class="docutils literal notranslate"><span class="pre">print_value_of_x_local()</span></code> function we have introduced two variables: <code class="docutils literal notranslate"><span class="pre">x=10</span></code> and <code class="docutils literal notranslate"><span class="pre">y=20</span></code>. Here, the <strong>local value</strong> of <code class="docutils literal notranslate"><span class="pre">x</span></code> overrides the <strong>global value</strong> of <code class="docutils literal notranslate"><span class="pre">x</span></code>, in the sense that the function will recognize only its local variable named <code class="docutils literal notranslate"><span class="pre">x</span></code> and will print its value. There is also the variable <code class="docutils literal notranslate"><span class="pre">y=20</span></code>, which is declared within a block (the function <code class="docutils literal notranslate"><span class="pre">print_value_x_y_local</span></code> body), whose value is printed within the function as well. Notice that, when we try to access the value of <code class="docutils literal notranslate"><span class="pre">y</span></code> from outside the function block, it will output an error, because <code class="docutils literal notranslate"><span class="pre">y</span></code> is <strong>out of scope</strong> and is not recognized outside the boundaries where it is defined using the <strong>scope rules</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Scope rules change a bit in case of <strong>control statements</strong>. If a <strong>control statement</strong> block is declared in the global scope (not inside a function), then the variables <em>initialized</em> there have <strong>global scope</strong>. Otherwise, if the control statements are inside a block/function, then variables declared there have <strong>local  scope</strong>, accessible only within the block they were declared.</p>
+</div>
+<p>Something important to note here is the fact that statements that are declared globally (not inside a function), are executed as soon as they are encountered by the IPython Interpreter, while statements inside function blocks are executed only when the function is called.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Be careful when naming variables. If their identifier has the same name as a built-in function in Python, then they will <em>shadow</em> the function. The interpreter will not recognize the built-in function anymore and a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> will be raised. The code below illustrates the situation. The interpreter sees <code class="docutils literal notranslate"><span class="pre">sum</span></code> as a variable now and does not know about the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function anymore.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">7</span><span class="n">nw_x13n5q965rss_qz6061m0000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_44632</span><span class="o">/</span><span class="mf">980638477.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="ne">TypeError</span>: &#39;int&#39; object is not callable
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="import-and-from-import-statemets">
+<h2><span class="section-number">4.1.5. </span><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">...</span></code> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code> statemets<a class="headerlink" href="#import-and-from-import-statemets" title="Permalink to this headline">#</a></h2>
+<p>In most of the cases, some built-in functions that we need to use are not part of our workspace, so we need to import the module that contains them. We do this using the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module</span></code> statements. For example, to import the <code class="docutils literal notranslate"><span class="pre">math</span></code> module we would write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1"># after importing the module we can use its features</span>
+
+<span class="c1"># using sqrt() function of math module</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also import certain functions of a module by using the following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">function1</span><span class="p">,</span> <span class="n">function2</span><span class="p">,</span><span class="o">...</span><span class="p">,</span> <span class="n">function_n</span>
+</pre></div>
+</div>
+<p>This would allow us to use the functions directly by their names.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can nest function calls in one another as long as the inner function returns something.
+E.g: <code class="docutils literal notranslate"><span class="pre">print(sqrt(4))</span></code></p>
+</div>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">log</span>
+<span class="c1"># this way of importing</span>
+<span class="c1"># allows to call directly the functions</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+0.6931471805599453
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In order to import all functions of a module you can use a <strong>wildcard</strong> (*), e.g <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">*</span></code>. However, this can introduce potential <em>shadowing</em> related to the variables we have in our code. So, it is advisable to avoid using it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In addition, it is possible to give aliases to modules. This is done to easily access the module functions later on. The syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Later on, we can access all functions of the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> library using <code class="docutils literal notranslate"><span class="pre">np.function_name</span></code>.</p>
+</div>
+</section>
+<section id="what-are-methods-optional">
+<span id="ch4-methods-label"></span><h2><span class="section-number">4.1.6. </span>What are methods? (Optional)<a class="headerlink" href="#what-are-methods-optional" title="Permalink to this headline">#</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This section includes concepts from object-oriented programming that is out of the scope of this book. We introduce it for the sake of completeness. Skipping it will not have any impact on understanding the other concepts that will come next.</p>
+</div>
+<p><strong>Methods</strong> are very similar to functions. The only difference is that they belong to objects. The difference is seen in their declaration and in the way how they are called. Here we provide examples of the <code class="docutils literal notranslate"><span class="pre">string</span></code> class built-in methods. Methods are declared within classes just like functions, but when they are called the syntax differs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">object_name</span><span class="o">.</span><span class="n">method_name</span><span class="p">(</span><span class="n">parameter_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This means that we are specifically referring to the <em>method</em> specified in the class. All objects of that class will have that method. An example will be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before calling method:&#39;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+<span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After calling method:&#39;</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before calling method: hello
+After calling method: Hello
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> is a method of the class <code class="docutils literal notranslate"><span class="pre">string</span></code>, since we are defining <code class="docutils literal notranslate"><span class="pre">word</span></code> to be a string. We cannot call <code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> as we had done before by just specifying its name and the parenthesis, because this function is specific to a class and only objects of that class can call it, that is why it is called a <strong>method</strong>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="00_functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_functions_exercises.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Exercises</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
