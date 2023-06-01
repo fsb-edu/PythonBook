@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Python and Pandas for Food Scientists
+title: Python for Food Scientists
 author: Dr. Michal Ziemski and Doriela Grabocka
 logo: images/eth_logo.svg
 
