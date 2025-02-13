@@ -816,6 +816,23 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>In contrast to lists, sets are very useful for storing collections of unique values when the order does not matter. This can be useful, e.g., for dereplicating a list or quickly counting the number of unique values in a list by casting a list to a set:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;duck&#39;</span><span class="p">,</span> <span class="s1">&#39;duck&#39;</span><span class="p">,</span> <span class="s1">&#39;duck&#39;</span><span class="p">,</span> <span class="s1">&#39;duck&#39;</span><span class="p">,</span> <span class="s1">&#39;goose&#39;</span><span class="p">]</span>
+<span class="n">unique_birds</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">birds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_birds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;We have </span><span class="si">{0}</span><span class="s1"> birds of </span><span class="si">{1}</span><span class="s1"> different types!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">birds</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_birds</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;goose&#39;, &#39;duck&#39;}
+We have 5 birds of 2 different types!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="adding-elements-in-a-set">
 <h3><span class="section-number">6.1.1.2. </span>Adding elements in a set<a class="headerlink" href="#adding-elements-in-a-set" title="Permalink to this headline">#</a></h3>
@@ -866,7 +883,7 @@ title="Print to PDF"
 </section>
 <section id="removing-elements-from-a-set">
 <h3><span class="section-number">6.1.1.3. </span>Removing elements from a set<a class="headerlink" href="#removing-elements-from-a-set" title="Permalink to this headline">#</a></h3>
-<p>For removing elements these methods can be used: <code class="docutils literal notranslate"><span class="pre">remove()</span></code>, <code class="docutils literal notranslate"><span class="pre">discard()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code>. <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method can be used to delete all elements of the set but <em>not the set itself</em>.</p>
+<p>For removing elements these methods can be used: <code class="docutils literal notranslate"><span class="pre">remove()</span></code>, <code class="docutils literal notranslate"><span class="pre">discard()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code>. The <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method can be used to delete all elements of the set but <em>not the set itself</em>.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">remove(element_name)</span></code> will remove the specified element and if that does not exist it will raise a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -934,7 +951,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method removes a random element from the set. Since sets are unordered, it will select an element (we as programmers cannot affect which element is selected) at random and will remove it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method removes a random element from the set and returns it as output. Since sets are unordered, it will select an element (we as programmers cannot affect which element is selected) at random and will remove it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chemicals_1</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
@@ -1192,8 +1209,8 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4}
-{1, 2, 3, 4}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{2, 3, 4}
+{2, 3, 4}
 </pre></div>
 </div>
 </div>
@@ -1355,7 +1372,7 @@ set()
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

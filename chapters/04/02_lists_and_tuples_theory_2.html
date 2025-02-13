@@ -705,7 +705,7 @@ title="Print to PDF"
 <h1><span class="section-number">5.2. </span>Readings: tuples<a class="headerlink" href="#readings-tuples" title="Permalink to this headline">#</a></h1>
 <section id="tuples">
 <h2><span class="section-number">5.2.1. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h2>
-<p>Tuples, just like lists, are sequences of values. However, unlike lists, they are <strong>immutable</strong>. This means that they cannot be modified during program execution: you cannot add or remove elements or modify any of the singleton items (like integers, floats, etc). Just like lists, they can have heterogenous or homogenous data. Everything enclosed in parentheses () is a tuple. Also, tuples are ordered, this means that the items in the tuple have an order defined at the time they are created which cannot change. Some examples of tuples:</p>
+<p>Tuples, just like lists, are sequences of values. However, unlike lists, they are <strong>immutable</strong>. This means that they cannot be modified during program execution: you cannot add or remove elements or modify any of the individual items (like integers, floats, etc). Just like lists, they can have heterogenous or homogenous data. Everything enclosed in parentheses () is a tuple. Also, tuples are ordered, this means that the items in the tuple have an order defined at the time they are created, which cannot change. Some examples of tuples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fermented_drinks</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;kombucha&#39;</span><span class="p">,</span> <span class="s1">&#39;wine&#39;</span><span class="p">)</span>
@@ -802,7 +802,7 @@ The contents of &quot;b&quot; is (1,) and its type is &lt;class &#39;tuple&#39;&
 </section>
 <section id="accessing-elements-of-a-tuple">
 <span id="ch4-access-tuples-label"></span><h3><span class="section-number">5.2.1.2. </span>Accessing elements of a tuple<a class="headerlink" href="#accessing-elements-of-a-tuple" title="Permalink to this headline">#</a></h3>
-<p>Again, the same patterns used for accessing elements in a list can be used with tuples. Negative indexing holds here as well. The index of the first element is 0, too.</p>
+<p>Again, the same patterns used for accessing elements in a list can be used with tuples. Negative indexing holds here as well. All indices in Python are 0-based, so the index of the first element in a tuple is 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fermented_drinks</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -873,7 +873,7 @@ Each time we add/remove an element in/from a tuple a new tuple would be created 
 </div>
 </div>
 </div>
-<p>The above piece of code gives a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because we are trying to modify an item from the tuple.</p>
+<p>The above piece of code gives a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because we are trying to modify an item from the tuple. However, we can modify the list that is the third item in <code class="docutils literal notranslate"><span class="pre">mixed_tuple</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_tuple</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
@@ -887,7 +887,7 @@ Each time we add/remove an element in/from a tuple a new tuple would be created 
 </div>
 </div>
 </div>
-<p>Now we accessed the element at position 2 of the tuple which is a list. Then we went a step further and accessed element at position 0 of the list inside the tuple. We changed this element from <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>. Since a list is mutable the operation was successful. Meanwhile if we try to substitute a list with another one, we are going to get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> again since we are trying to modify an element of a tuple:</p>
+<p>In the code block above, we accessed the element at position 2 (i.e., the third item) of the tuple, which is a list. Next, we accessed the element at position 0 of this list and re-assigned this element from <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>. Since a list is mutable the operation was successful. Meanwhile if we try to substitute a list with another one, we are going to get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> again since we are trying to modify an element of a tuple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_tuple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
@@ -972,11 +972,11 @@ ID of numbers_list_1 after adding new elements: 140693548117440
 </div>
 </div>
 </div>
-<p>As you can, see the ID has not changed.</p>
+<p>As you can see, the ID has not changed.</p>
 </section>
 <section id="removing-elements-from-a-tuple">
 <h4><span class="section-number">5.2.1.3.3. </span>Removing elements from a tuple<a class="headerlink" href="#removing-elements-from-a-tuple" title="Permalink to this headline">#</a></h4>
-<p>To <strong>remove</strong> values from a tuple we first need to convert the tuple to a list. Then we can use one of the ways explained in <a class="reference internal" href="01_lists_and_tuples_theory_1.html#ch4-remove-elements-from-list-label"><span class="std std-ref"> Removing elements from a list</span></a>. After that, we would have to convert the list back to a tuple. This will result in a new tuple being created.</p>
+<p>To <strong>remove</strong> values from a tuple we first need to convert the tuple to a list. Then we can remove values using one of the ways explained in <a class="reference internal" href="01_lists_and_tuples_theory_1.html#ch4-remove-elements-from-list-label"><span class="std std-ref"> Removing elements from a list</span></a>. After that, we can convert the list back to a tuple. This will result in a new tuple being created.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <div class="admonition hint">
@@ -1010,7 +1010,7 @@ ID of numbers_1 after removing 8: 140693547995696
 </div>
 </div>
 </div>
-<p>Here the creation of the new tuple object is more evident since we are using <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> function to create a new tuple from a given list. You can confirm this by checking the changed IDs. In memory the process is similar to what is depicted in <a class="reference internal" href="#adding-tuple-comprehension"><span class="std std-numref">Fig. 5.5</span></a>, except that now we copy only the elements that we need.</p>
+<p>Here the creation of the new tuple object is more evident since we are using the <code class="docutils literal notranslate"><span class="pre">tuple()</span></code> function to create a new tuple from a given list. You can confirm this by checking the changed IDs. In memory, the process is similar to what is depicted in <a class="reference internal" href="#adding-tuple-comprehension"><span class="std std-numref">Fig. 5.5</span></a>, except that now we copy only the elements that we need.</p>
 </section>
 </section>
 <section id="searching-tuples">
@@ -1121,7 +1121,7 @@ ID of numbers_1 after removing 8: 140693547995696
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

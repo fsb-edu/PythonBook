@@ -717,7 +717,7 @@ title="Print to PDF"
 <section id="lists">
 <h2><span class="section-number">5.1.1. </span>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
 <p>The syntax for declaring a list is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">,</span> <span class="n">item3</span><span class="p">,</span><span class="o">....</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">,</span> <span class="n">item3</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Anything enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and separated by <code class="docutils literal notranslate"><span class="pre">,</span></code> will be a list. With the above piece of code you create a list and assign it to the <code class="docutils literal notranslate"><span class="pre">list_name</span></code> variable. Some examples of lists would be:</p>
@@ -739,7 +739,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Just like in previous chapters, we can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to print the contents of a list:</p>
+<p>An in previous chapters, we can use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to print the contents of a list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">natural_numbers</span><span class="p">)</span>
@@ -754,7 +754,7 @@ title="Print to PDF"
 </div>
 <section id="number-of-elements-in-a-list">
 <h3><span class="section-number">5.1.1.1. </span>Number of elements in a list<a class="headerlink" href="#number-of-elements-in-a-list" title="Permalink to this headline">#</a></h3>
-<p>In most cases we do not know how many elements there are in a  list. It is possible that during the execution of the program the number of elements in a list will change, e.g we add/remove elements to/from a list, list created from user inputs, etc. In these situations, if we would like to iterate over the elements of a list, it would be impossible to hard-code the number of iterations like we did so far in the previous chapters. That’s why the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function is very useful. It gets a list as an argument and outputs the length of that list, in other words: the number of elements that the list has. For example:</p>
+<p>In most cases we do not know how many elements there are in a  list. It is possible that during the execution of the program the number of elements in a list will change, e.g., if we add/remove elements to/from a list, accept a list created from user inputs, etc. In these situations, if we would like to iterate over the elements of a list, it would be impossible to hard-code the number of iterations like we did so far in the previous chapters. That’s why the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function is very useful. It gets a list as an argument and outputs the length of that list, in other words: the number of elements that the list has. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mixed_list</span><span class="p">)</span>
@@ -770,7 +770,7 @@ title="Print to PDF"
 </section>
 <section id="accessing-elements-of-the-list">
 <span id="ch4-access-lists-label"></span><h3><span class="section-number">5.1.1.2. </span>Accessing elements of the list<a class="headerlink" href="#accessing-elements-of-the-list" title="Permalink to this headline">#</a></h3>
-<p>Lists in Python are 0-based index. This means that the first element is at position 0, the second element at position 1 and so on. <a class="reference internal" href="#indexing"><span class="std std-numref">Fig. 5.1</span></a> illustrates this idea.</p>
+<p>Lists in Python use 0-based indexing. This means that the first element is at position 0, the second element at position 1 and so on. <a class="reference internal" href="#indexing"><span class="std std-numref">Fig. 5.1</span></a> illustrates this idea.</p>
 <figure class="align-center" id="indexing">
 <img alt="indexing_illustration" class="ch5" src="../../_images/indexing.jpg" />
 <figcaption>
@@ -779,7 +779,7 @@ title="Print to PDF"
 </figure>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Since Python is 0-based index this means that in a list with <code class="docutils literal notranslate"><span class="pre">n</span></code> elements, the last element will be in position <code class="docutils literal notranslate"><span class="pre">n-1</span></code>.</p>
+<p>Since Python uses 0-based indexing this means that in a list with <code class="docutils literal notranslate"><span class="pre">n</span></code> elements, the last element will be in position <code class="docutils literal notranslate"><span class="pre">n-1</span></code>.</p>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -801,7 +801,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Although character <code class="docutils literal notranslate"><span class="pre">t</span></code> is the third element in the list, in order to access it we should use index <code class="docutils literal notranslate"><span class="pre">2</span></code> since lists are 0-index based.</p>
+<p>Although character <code class="docutils literal notranslate"><span class="pre">t</span></code> is the third element in the list, in order to access it we should use index <code class="docutils literal notranslate"><span class="pre">2</span></code> since lists use 0-based indices.</p>
 <p>In Python we can also access elements of a list using negative indices. In this setting, the last element of the list is at position -1, the second from the last is at position -2 and so on. <a class="reference internal" href="#indexing-neg"><span class="std std-numref">Fig. 5.2</span></a> illustrates the idea:</p>
 <figure class="align-center" id="indexing-neg">
 <img alt="neg_indexing_illustration" class="ch5" src="../../_images/negative_indexing.jpg" />
@@ -874,9 +874,9 @@ title="Print to PDF"
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Here we used function <code class="docutils literal notranslate"><span class="pre">len(letters)</span></code> to determine the number of elements of the <code class="docutils literal notranslate"><span class="pre">letters</span></code> list inside the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. So the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function will produce the sequence of numbers <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1,</span> <span class="pre">2,...,</span> <span class="pre">len(letters)-1}</span></code> that corresponds to the indices needed to access the elements of the list. Thus we do not need to hardcode the number of elements that a list will have since we can access it via the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, as explained in the previous section as well.</p>
+<p>Here we used the function <code class="docutils literal notranslate"><span class="pre">len(letters)</span></code> to determine the number of elements of the <code class="docutils literal notranslate"><span class="pre">letters</span></code> list inside the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function. So the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function will produce the sequence of numbers <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1,</span> <span class="pre">2,...,</span> <span class="pre">len(letters)-1}</span></code> that corresponds to the indices needed to access the elements of the list. Thus we do not need to hardcode the number of elements that a list will have since we can access it via the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, as explained in the previous section.</p>
 </div>
-<p>While, if we want to select a range of values in a list, in the square brackets we would put a range:</p>
+<p>We can also select a range of values in a list by placing a range inside the square brackets with the following syntax:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="p">[</span><span class="n">start_pos</span><span class="p">:</span><span class="n">end_pos</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -897,15 +897,15 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">list_name[start_pos:</span> <span class="pre">]</span></code> - this will select all elements from <code class="docutils literal notranslate"><span class="pre">start_pos</span></code> until the end of the list.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">list_name[</span> <span class="pre">:end_pos]</span></code> - this will select all elements from the beginning until the <code class="docutils literal notranslate"><span class="pre">end_pos</span></code> non-inclusive.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">list_name[</span> <span class="pre">:</span> <span class="pre">]</span></code> - this will select all elements of the list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list_name[</span> <span class="pre">:</span> <span class="pre">]</span></code> - this will select all elements of the list (equivalent to calling <code class="docutils literal notranslate"><span class="pre">list_name</span></code>).</p></li>
 </ul>
 </section>
 <section id="adding-removing-elements-to-from-a-list">
 <h3><span class="section-number">5.1.1.3. </span>Adding/removing elements to/from a list<a class="headerlink" href="#adding-removing-elements-to-from-a-list" title="Permalink to this headline">#</a></h3>
-<p>Lists are <strong>mutable</strong> data-types. This means that we can modify a list and its objects by adding, deleting or modifying certain list elements.
-In order to modify a list element we access it using its index and then we set it to the new value. For example, suppose we want to change the second element of the <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> list from <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code>. Then we would write:</p>
+<p>Lists are <strong>mutable</strong> data-types. This means that we can modify a list and its objects by adding, deleting, or modifying certain list elements.</p>
 <section id="modifying-elements-of-a-list">
 <h4><span class="section-number">5.1.1.3.1. </span>Modifying elements of a list<a class="headerlink" href="#modifying-elements-of-a-list" title="Permalink to this headline">#</a></h4>
+<p>In order to modify a list element we access it using its index and then we set it to the new value. For example, suppose we want to change the second element of the <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> list from <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code>. Then we would write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;List of natural numbers before changes:&#39;</span><span class="p">,</span> <span class="n">natural_numbers</span><span class="p">)</span>
@@ -968,7 +968,7 @@ List of natural numbers after changes: [1, 10, 3, 4, 5]
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">7</span><span class="n">f</span><span class="o">/</span><span class="mi">7</span><span class="n">nw_x13n5q965rss_qz6061m0000gq</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_46911</span><span class="o">/</span><span class="mf">2418135379.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">natural_numbers</span> <span class="o">+=</span> <span class="mi">20</span>
 
 <span class="ne">TypeError</span>: &#39;int&#39; object is not iterable
@@ -1002,20 +1002,6 @@ List of natural numbers after changes: [1, 10, 3, 4, 5]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
 </pre></div>
 </div>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> modified list will be appended to the <code class="docutils literal notranslate"><span class="pre">rational_numbers</span></code>.</p>
-</div>
-</aside>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>As you can see, in Python, lists can contain different data types.</p>
-</div>
-</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;natural_numbers before adding 50:&#39;</span><span class="p">,</span> <span class="n">natural_numbers</span><span class="p">)</span>
@@ -1035,6 +1021,14 @@ natural_numbers after adding 50: [1, 10, 3, 50, 4, 5, 20, 30, 40]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">collection_to_be_added</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>For example, we can append the <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> modified list to the <code class="docutils literal notranslate"><span class="pre">rational_numbers</span></code> list using the <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>As you can see, in Python, lists can contain different data types.</p>
+</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;rational_numbers before extending to natural_numbers:&#39;</span><span class="p">,</span> <span class="n">rational_numbers</span><span class="p">)</span>
@@ -1044,8 +1038,8 @@ natural_numbers after adding 50: [1, 10, 3, 50, 4, 5, 20, 30, 40]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rational_numbers before extending to natural_numbers: [1.1, 2.5, 3.4, 4.7]
-rational_numbers after extending to natural_numbers: [1.1, 2.5, 3.4, 4.7, 1, 10, 3, 50, 4, 5, 20, 30, 40]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rational_numbers before extending to natural_numbers: [1.1, 2.5, 3.4]
+rational_numbers after extending to natural_numbers: [1.1, 2.5, 3.4, 1, 10, 3, 50, 4, 5, 20, 30, 40]
 </pre></div>
 </div>
 </div>
@@ -1083,6 +1077,13 @@ natural_numbers after removing 50: [1, 10, 3, 4, 5, 20, 30, 40]
 </div>
 </div>
 </div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">pop</span></code> does not only remove an element from a list: it also returns that element as the output, as shown in the previous chapter.</p>
+</div>
+</aside>
 <p>The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method has two versions: one without any arguments and one with one argument. If we call <code class="docutils literal notranslate"><span class="pre">pop()</span></code> without any arguments then it will remove the last element from the list. If we call <code class="docutils literal notranslate"><span class="pre">pop(index)</span></code> it will remove the item at position <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1102,14 +1103,16 @@ natural_numbers after removing last element: [1, 10, 3, 4, 5, 20, 30]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;natural_numbers before removing element at position 4:&#39;</span><span class="p">,</span> <span class="n">natural_numbers</span><span class="p">)</span>
-<span class="n">natural_numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">fourth_item</span> <span class="o">=</span> <span class="n">natural_numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;natural_numbers after removing element at position 4:&#39;</span><span class="p">,</span> <span class="n">natural_numbers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;we removed this item from the list:&#39;</span><span class="p">,</span> <span class="n">fourth_item</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>natural_numbers before removing element at position 4: [1, 10, 3, 4, 5, 20, 30]
 natural_numbers after removing element at position 4: [1, 10, 3, 4, 20, 30]
+we removed this item from the list: 5
 </pre></div>
 </div>
 </div>
@@ -1122,8 +1125,8 @@ natural_numbers after removing element at position 4: [1, 10, 3, 4, 20, 30]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">do</span> <span class="n">something</span> <span class="n">on</span> <span class="n">item</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterable_name</span> <span class="p">(</span><span class="k">if</span> <span class="n">condition</span><span class="o">==</span><span class="kc">True</span><span class="p">)]</span>
 </pre></div>
 </div>
-<p>The condition is not mandatory to be included. Below we will see examples that include a <em>condition</em> part and examples that do not include a <em>condition</em> part. Also, the <code class="docutils literal notranslate"><span class="pre">iterable_name</span></code> can be any iterable (list, tuple, set, dictionary). <code class="docutils literal notranslate"><span class="pre">x</span></code> is the variable used to iterate the list, that will represent one element of the iterable per iteration, which will be modified by the <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">something</span> <span class="pre">on</span> <span class="pre">item</span> <span class="pre">x</span></code> part and will be appended to the <code class="docutils literal notranslate"><span class="pre">new_list</span></code>.</p>
-<p>As you can  see, they provide a shorthand syntax for creating a list by modifying or filtering elements of the current list, in only one line of code.</p>
+<p>The condition is not mandatory to be included. Below we will see examples that include a <em>condition</em> part and examples that do not include a <em>condition</em> part. Also, the <code class="docutils literal notranslate"><span class="pre">iterable_name</span></code> can be any iterable (list, tuple, set, dictionary). <code class="docutils literal notranslate"><span class="pre">x</span></code> is the variable used to iterate the list, which will represent one element of the iterable per iteration, will be modified by the <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">something</span> <span class="pre">on</span> <span class="pre">item</span> <span class="pre">x</span></code> part, and will be appended to the <code class="docutils literal notranslate"><span class="pre">new_list</span></code>.</p>
+<p>As you can  see, list comprehensions provide a shorthand syntax for creating a list by modifying or filtering elements of the current list, in only one line of code.</p>
 <p>For example, to iterate over the elements of the <code class="docutils literal notranslate"><span class="pre">letters</span></code> list we  would write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1137,7 +1140,7 @@ natural_numbers after removing element at position 4: [1, 10, 3, 4, 20, 30]
 </div>
 </div>
 </div>
-<p>Another example that illustrates the usefulness of list comprehension in avoiding using loops is the following:</p>
+<p>To illustrate the usefulness of list comprehension, take for example the following <code class="docutils literal notranslate"><span class="pre">for</span></code> loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1171,7 +1174,7 @@ natural_numbers after removing element at position 4: [1, 10, 3, 4, 20, 30]
 <p class="sidebar-title"></p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator is used to check if an item is part of a sequence like a list or a tuple or not. Similarly if we want to check if an item is not in a sequence we just add the negation operator <code class="docutils literal notranslate"><span class="pre">not</span></code> in front of <code class="docutils literal notranslate"><span class="pre">in</span></code>. <a class="reference internal" href="#ch4-search-list"><span class="std std-ref">More to follow</span></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator is used to check if an item is part of a sequence like a list or a tuple. Similarly if we want to check if an item is not in a sequence we just add the negation operator <code class="docutils literal notranslate"><span class="pre">not</span></code> in front of <code class="docutils literal notranslate"><span class="pre">in</span></code>. <a class="reference internal" href="#ch4-search-list"><span class="std std-ref">More to follow</span></a>.</p>
 </div>
 </aside>
 <div class="cell docutils container">
@@ -1217,7 +1220,7 @@ Consonants in letters: [&#39;p&#39;, &#39;t&#39;, &#39;h&#39;, &#39;n&#39;]
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">[vowels_list.append(x)</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">vowels</span> <span class="pre">else</span> <span class="pre">consonants_list.append(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">letters]</span></code> this is the statement equivalent to the two <em>list-comprehensions</em> in the previous example. In other words, this statement sole-handedly does the job. Let us explain what it does. We are iterating over the <code class="docutils literal notranslate"><span class="pre">letters</span></code> list using the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. For each <code class="docutils literal notranslate"><span class="pre">x</span></code>, we check if it is in the <code class="docutils literal notranslate"><span class="pre">vowels</span></code> list defined in the previous code cell. If this condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then we append the letter <code class="docutils literal notranslate"><span class="pre">x</span></code> to the <code class="docutils literal notranslate"><span class="pre">vowels_list</span></code>, otherwise we append <code class="docutils literal notranslate"><span class="pre">x</span></code> to the <code class="docutils literal notranslate"><span class="pre">consonants_list</span></code>. So the first statement <code class="docutils literal notranslate"><span class="pre">vowels_list.append(x)</span></code> is executed only if the condition in the <code class="docutils literal notranslate"><span class="pre">if</span></code> part is <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise the statement in the <code class="docutils literal notranslate"><span class="pre">else</span></code> part is executed. <a class="reference internal" href="#list-comprehension"><span class="std std-numref">Fig. 5.3</span></a> illustrates this case too.</p>
+<p>Thus, using two conditions (<code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code>) in the statement above is equivalent to the two <em>list-comprehensions</em> in the previous example. In other words, this statement single-handedly does the job. Let us explain what it does. We are iterating over the <code class="docutils literal notranslate"><span class="pre">letters</span></code> list using the variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. For each <code class="docutils literal notranslate"><span class="pre">x</span></code>, we check if it is in the <code class="docutils literal notranslate"><span class="pre">vowels</span></code> list defined in the previous code cell. If this condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then we append the letter <code class="docutils literal notranslate"><span class="pre">x</span></code> to the <code class="docutils literal notranslate"><span class="pre">vowels_list</span></code>, otherwise we append <code class="docutils literal notranslate"><span class="pre">x</span></code> to the <code class="docutils literal notranslate"><span class="pre">consonants_list</span></code>. So the first statement <code class="docutils literal notranslate"><span class="pre">vowels_list.append(x)</span></code> is executed only if the condition in the <code class="docutils literal notranslate"><span class="pre">if</span></code> part is <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise the statement in the <code class="docutils literal notranslate"><span class="pre">else</span></code> part is executed. <a class="reference internal" href="#list-comprehension"><span class="std std-numref">Fig. 5.3</span></a> illustrates this case too.</p>
 <figure class="align-center" id="list-comprehension">
 <img alt="list_comp_illustration" class="ch5" src="../../_images/list_comp_with_mult_cond.jpg" />
 <figcaption>
@@ -1257,7 +1260,7 @@ letters in descending order: [&#39;y&#39;, &#39;t&#39;, &#39;p&#39;, &#39;o&#39;
 </div>
 </div>
 </div>
-<p>Changes happen to the original list, <code class="docutils literal notranslate"><span class="pre">letters</span></code>.</p>
+<p>As you can see, the <code class="docutils literal notranslate"><span class="pre">sort()</span></code> method modifies the original list, <code class="docutils literal notranslate"><span class="pre">letters</span></code>.</p>
 <p>Sorting using the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> built-in function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1277,7 +1280,7 @@ sorted_numbers [1, 3, 4, 10, 20, 30]
 <p>As you can see, the original list passed as argument, <code class="docutils literal notranslate"><span class="pre">natural_numbers</span></code> is unchanged.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>If you try to use the built-in function <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> or the built-in method <code class="docutils literal notranslate"><span class="pre">sort()</span></code> with a list that contains mixed data-types you will get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because there will be no way how to compare values of different data-types.</p>
+<p>If you try to use the built-in function <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> or the built-in method <code class="docutils literal notranslate"><span class="pre">sort()</span></code> with a list that contains mixed data-types you will get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because it is not possible to compare values of different data-types.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1303,7 +1306,7 @@ sorted_numbers [1, 3, 4, 10, 20, 30]
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_name</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">key_name</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>As we have seen many times so  far, since <code class="docutils literal notranslate"><span class="pre">index()</span></code> is  a built-in method, we are calling it on a <em>list object</em>, that is the list we are searching the key in. <em><strong>Key_name</strong></em> is the value that we are interested in finding out if it is in the <em>list_name</em> or not. This method will return the first index where the item is found in the list.</p>
+<p>As we have seen many times so  far, since <code class="docutils literal notranslate"><span class="pre">index()</span></code> is  a built-in method, we are calling it on a <em>list object</em>; in other words, we search for the <code class="docutils literal notranslate"><span class="pre">key_name</span></code> inside the <code class="docutils literal notranslate"><span class="pre">list_name</span></code>. This method will return the first index where the item is found in the list.</p>
 <p>Let us look at an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1341,7 +1344,7 @@ sorted_numbers [1, 3, 4, 10, 20, 30]
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>To escape this kind of errors Python provides two operators: <strong>in</strong> and <strong>not in</strong>. <strong>in</strong> checks whether an element is part of a list and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if so, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>. <strong>not in</strong> does the opposite, it checks whether an element is not in a list and if it is not, returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>To escape this kind of error Python provides two operators: <strong>in</strong> and <strong>not in</strong>. <strong>in</strong> checks whether an element is part of a list and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if so, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>. <strong>not in</strong> does the opposite, it checks whether an element is not in a list and if it is not, returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise it returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1386,7 +1389,7 @@ Python also provides two additional functions to deal with lists: <code class="d
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p><code class="docutils literal notranslate"><span class="pre">index()</span></code> does not allow any <em>keyword arguments</em> so it is not possible to specify only the <em>end_index</em>. Also the search goes only forward even if you specify negative indices.</p>
+<p><code class="docutils literal notranslate"><span class="pre">index()</span></code> does not allow any <em>keyword arguments</em> so it is not possible to specify only the <em>end_index</em> without the <em>start_index</em>. Also the search goes only in the forward direction (i.e., ascending order) even if you specify negative indices.</p>
 </div>
 <p>Next on, we will see another collection data type: tuples.</p>
 </section>
@@ -1441,7 +1444,7 @@ Python also provides two additional functions to deal with lists: <code class="d
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

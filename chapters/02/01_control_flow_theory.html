@@ -848,7 +848,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Pseudocode and Flowchart Example</span><a class="headerlink" href="#fwch-pseudo" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Here is the program from the flowchart and pseudocode.</p>
+<p>Here is the program that corresponds with the flowchart and pseudocode above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
@@ -1111,7 +1111,7 @@ title="Print to PDF"
 </section>
 <section id="loops">
 <h2><span class="section-number">3.1.3. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h2>
-<p>Sometimes some parts of code need to run repeatedly as long as a condition holds. In this cases, it is almost impossible to write sequential code to accomplish this because this would end up in a pile of copy-pasted statements that is very difficult to maintain. That’s where <em>loops</em> are handy. Python has two built-in loop structures: <em><strong>while</strong></em> and <em><strong>for</strong></em> loops. Below we will see both of them in details.</p>
+<p>Sometimes some parts of code need to run repeatedly as long as a condition is true. In these cases, it can be impossible (or at least extremely inefficient) to write sequential code to accomplish this because this would end up in a pile of copy-pasted statements that are very difficult to read and maintain. This is where <em>loops</em> are handy. Python has two built-in loop structures: <em><strong>while</strong></em> and <em><strong>for</strong></em> loops. Below we will see both of them in action.</p>
 <section id="while-loop">
 <h3><span class="section-number">3.1.3.1. </span><strong>while</strong> loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">#</a></h3>
 <p>The structure of a <em><strong>while</strong></em> loop is:</p>
@@ -1119,7 +1119,7 @@ title="Print to PDF"
     <span class="n">do</span> <span class="n">something</span>
 </pre></div>
 </div>
-<p>The <em><strong>while</strong></em> loop will run the block inside for as many times as the condition in the brackets () will hold.
+<p>The <em><strong>while</strong></em> loop will run the block inside for as many times as the condition (shown in the brackets <code class="docutils literal notranslate"><span class="pre">()</span></code> above) is true.
 Let us see a classic example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1145,7 +1145,7 @@ i = 1
     <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>until the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> will be true. Each time the body of the loop gets executed, the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> is printed and the next step is to decrease the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> by 1. This process will repeat 5 times. After 1 has been printed, <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes 0 and the condition that <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> fails, thus we get out of the loop. <code class="docutils literal notranslate"><span class="pre">i</span></code> is also called the <strong>loop condition variable</strong>. <a class="reference internal" href="#while-fwch-pseudo"><span class="std std-numref">Fig. 3.2</span></a> shows the flowchart for the above code snippet.</p>
+<p>until the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> will be true. Each time the body of the loop gets executed, the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> is printed and the next step is to decrease the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> by 1. This process will repeat 5 times. After 1 has been printed, <code class="docutils literal notranslate"><span class="pre">i</span></code> becomes 0 and the condition that <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> fails, thus the loop ends. <code class="docutils literal notranslate"><span class="pre">i</span></code> is also called the <strong>loop condition variable</strong>. <a class="reference internal" href="#while-fwch-pseudo"><span class="std std-numref">Fig. 3.2</span></a> shows the flowchart for the above code snippet.</p>
 <p>In case we do not decrease the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> then, the loop would run forever. This is otherwise known as <strong>infinite loop</strong>. Let us examine why this would happen. Since we never change the value of <code class="docutils literal notranslate"><span class="pre">i</span></code> anywhere, <code class="docutils literal notranslate"><span class="pre">i</span></code> in each iteration will be <code class="docutils literal notranslate"><span class="pre">5</span></code>. This means that the condition <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> will always be true and the body of the loop would run forever.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1194,7 +1194,7 @@ i = 1
 </div>
 </div>
 </div>
-<p>We have a list of numbers <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1]</span></code>. The <strong>for-loop</strong> will iterate over this list of numbers and for each of the elements will run the statement <code class="docutils literal notranslate"><span class="pre">print('i</span> <span class="pre">=</span> <span class="pre">',</span> <span class="pre">i)</span></code>. In each iteration, one of the elements of the list is assigned to the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>, which then is printed. Basically, the loop will finish the execution once there are no more elements on the list anymore. As you can see, here we do not need to explicitly change the value of the loop continuation variable.</p>
+<p>We have a list of numbers <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">2,</span> <span class="pre">1]</span></code>. The <strong>for-loop</strong> will iterate over this list of numbers and for each of the elements will run the statement <code class="docutils literal notranslate"><span class="pre">print('i</span> <span class="pre">=</span> <span class="pre">',</span> <span class="pre">i)</span></code>. In each iteration, one of the elements of the list is assigned to the variable <code class="docutils literal notranslate"><span class="pre">i</span></code>, which then is printed. The loop will finish the execution once there are no more elements on the list anymore. As you can see, here we do not need to explicitly change the value of the loop continuation variable.</p>
 <p>Just like iterating over a list of numbers we can iterate over a string as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1219,7 +1219,7 @@ i = 1
 <p>The same can be achieved even without introducing the <strong>else</strong> block after a <strong>for</strong> loop. Just put the last <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in the same indentation level as the <strong>for</strong> loop (outside of the for loop).</p>
 </div>
 </aside>
-<p>In Python it is possible to have an <strong>else</strong> block after a <strong>for</strong> loop. In this case, the <strong>else</strong> block will have a similar function to that in the <strong>if-else</strong> statements, it will do something after all elements are exhausted. See the example below.</p>
+<p>In Python it is possible to have an <strong>else</strong> block after a <strong>for</strong> loop. In this case, the <strong>else</strong> block will have a similar function to that in the <strong>if-else</strong> statements, i.e., it will do something after all elements are exhausted. See the example below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
@@ -1242,7 +1242,7 @@ Loop is done
 </section>
 <section id="nested-loops">
 <span id="ch3-nested-loops-label"></span><h3><span class="section-number">3.1.3.3. </span>Nested loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">#</a></h3>
-<p>It is possible to nest a loop inside another one being them for- or while- loops. Let’ us see this in action. We want to find out the best combination of a fermented food with a fermented drink. To do this, we first have to find out and print all combinations. Below you can see the list of the available <code class="docutils literal notranslate"><span class="pre">fermented_foods</span></code> and <code class="docutils literal notranslate"><span class="pre">fermented_drinks</span></code>.</p>
+<p>It is possible to nest a loop inside another for- or while- loop. Let us see this in action. We want to find out the best combination of a fermented food with a fermented drink. To do this, we first have to find out and print all combinations. Below you can see the list of the available <code class="docutils literal notranslate"><span class="pre">fermented_foods</span></code> and <code class="docutils literal notranslate"><span class="pre">fermented_drinks</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fermented_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;kimchi&#39;</span><span class="p">,</span> <span class="s1">&#39;sourdough&#39;</span><span class="p">,</span> <span class="s1">&#39;cheese&#39;</span><span class="p">]</span>
@@ -1285,7 +1285,7 @@ cheese - wine
 </aside>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>It is also possible to nest a <strong>for</strong> with a <strong>while</strong> loop or vice versa. Try this out!</p>
+<p>It is also possible to nest a <strong>for</strong> loop within a <strong>while</strong> loop or vice versa. Try this out!</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1382,18 +1382,20 @@ cheese
 </div>
 </div>
 <p>What happens here is that when <code class="docutils literal notranslate"><span class="pre">food</span></code> is assigned <code class="docutils literal notranslate"><span class="pre">kimchi</span></code> from the list, the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement will be skipped and the <code class="docutils literal notranslate"><span class="pre">food</span></code> variable will be assigned the next element in the list, <code class="docutils literal notranslate"><span class="pre">sourdough</span></code>, which is printed. The loop continues with the rest of the values in the list. The <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement tells the loop to ignore whatever is left in this iteration and just directly begin the next iteration.</p>
-<p>The <strong>break</strong> statement breaks the loop completely and continues executing the statements <em>after</em> the loop. For example:</p>
+<p>The <strong>break</strong> statement, on the other hand, breaks the loop completely and continues executing the statements <em>after</em> the loop. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">drink</span> <span class="ow">in</span> <span class="n">fermented_drinks</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">drink</span> <span class="o">==</span> <span class="s1">&#39;mezcal&#39;</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">drink</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;all done!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tequila
+all done!
 </pre></div>
 </div>
 </div>
@@ -1474,7 +1476,7 @@ Example:</p>
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

@@ -637,8 +637,9 @@ title="Print to PDF"
 <h1><span class="section-number">9.1. </span>Readings: files<a class="headerlink" href="#readings-files" title="Permalink to this headline">#</a></h1>
 <section id="why-are-files-useful">
 <h2><span class="section-number">9.1.1. </span>Why are files useful?<a class="headerlink" href="#why-are-files-useful" title="Permalink to this headline">#</a></h2>
-<p>Until now, all the data we have dealt with was created on the fly and resided in the memory for the duration of the execution of the program. If we close the browser window and reopen it again to run the program, the data will be recreated from the beginning in the computer that will run the code. But what if we spend a lot of time to create the data each time we need it? This is not an efficient way. For that reason, we can create the data once, save it in a file and each time we need it, we simply read it from the file. This saves a lot of time.</p>
-<p>From Python’s perspective, a file is nothing more than a sequence of <em>elements</em>. Elements can be of different types. For example, in the case of text files the <em>elements</em> that make the sequence are nothing more than characters, while in the case of images, videos, etc. these elements are simply bytes. As all sequences, even these are 0-index based. An end-of-file marker (placed at the end of the file) sends a signal to the method that reads the file indicating that its end was reached.</p>
+<p>Until now, all the data we have dealt with were created on the fly and resided in the memory for the duration of the execution of the program. If we close the browser window and reopen it again to run the program, the data will be recreated from the beginning in the computer that will run the code. But what if we spend a lot of time to create the data each time we need it? This is not an efficient approach. For that reason, we can create the data once, save it in a file and each time we need it, we simply read it from the file. This saves a lot of time.</p>
+<p>Moreover, we usually write programs to perform specific operations on potentially <em>any</em> input provided, e.g., so that we can perform the same operation on many different inputs (as opposed to data that are hardcoded into our program). We also usually need to share and store our data. For these reasons, files are used to conveniently store data in portable formats that can be shared and/or input to different programs.</p>
+<p>From Python’s perspective, a file is nothing more than a sequence of <em>elements</em>. Elements can be of different types. For example, in the case of text files the <em>elements</em> that make the sequence are nothing more than characters, while in the case of images, videos, etc. these elements are simply bytes. As all sequences, even these are 0-index-based. An end-of-file marker (placed at the end of the file) sends a signal to the method that reads the file indicating that its end was reached.</p>
 </section>
 <section id="writing-data-to-a-file">
 <h2><span class="section-number">9.1.2. </span>Writing data to a file<a class="headerlink" href="#writing-data-to-a-file" title="Permalink to this headline">#</a></h2>
@@ -673,7 +674,7 @@ title="Print to PDF"
 <td><p>(exclusive creation), this mode will try to create the file from scratch and if the file exists it will raise an error</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">r+</span></code></p></td>
-<td><p>opens a file to read and write from/to it and contents will be overridden</p></td>
+<td><p>opens a file to read and write from/to it and contents will be overwritten</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">w+</span></code></p></td>
 <td><p>opens a file to read and write from/to it but any existing content will be deleted</p></td>
@@ -683,15 +684,6 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> (read) - opens a file for <em>reading it</em>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> (write) - opens a file for <em>writing to it</em>. If the file does not exist it will be created and if it already exists, its contents will be overwritten.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> (append) - opens a file for <em>writing to it</em>, but the difference is that it will not overwrite the contents of the file if it already exists. Otherwise it is the same as the <code class="docutils literal notranslate"><span class="pre">w</span></code> mode.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> (exclusive creation) - this mode will try to create the file from scratch and if the file exists it will raise an error.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">r+</span></code> - opens a file to read and write from/to it and contents will be overridden.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">w+</span></code> - opens a file to read and write from/to it but any existing content will be deleted.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a+</span></code> - opens a text file to read and append to it at the end of the file.</p></li>
-</ul>
 <p>Each time we deal with a file, be it for reading or writing purposes, the interpreter will assign a file object to it, to handle all the underlying tasks like opening the file and actually reading/writing from/to it. In the above syntax we refer to this object as <code class="docutils literal notranslate"><span class="pre">object_name</span></code>. Then, in the case of writing to a file we use the <code class="docutils literal notranslate"><span class="pre">write()</span></code> method of the <code class="docutils literal notranslate"><span class="pre">object_name</span></code> to write the actual content to the file.
 Let us look at an example:</p>
 <div class="cell docutils container">
@@ -823,7 +815,7 @@ Are you excited to learn more about food science and programming?
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

@@ -807,7 +807,8 @@ title="Print to PDF"
 <h1><span class="section-number">5.3. </span>Readings: functions and methods for lists and tuples<a class="headerlink" href="#readings-functions-and-methods-for-lists-and-tuples" title="Permalink to this headline">#</a></h1>
 <section id="unpacking-sequences-of-variables">
 <h2><span class="section-number">5.3.1. </span>Unpacking sequences of variables<a class="headerlink" href="#unpacking-sequences-of-variables" title="Permalink to this headline">#</a></h2>
-<p>So far we have seen how to group different variables or values into a single variable. By doing unpacking we reverse this process, we move from one sequence of variables to multiple variables. The syntax for unpacking looks like this:</p>
+<p>So far we have seen how to group different variables or values into a single variable. By unpacking we reverse this process: we move from one sequence of variables to multiple variables. This is really useful when you want to take one or more items from a sequence and assign them to new variable(s) that can call later.</p>
+<p>The syntax for unpacking looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span><span class="p">,</span> <span class="o">....</span> <span class="o">=</span> <span class="n">sequence_name</span>
 </pre></div>
 </div>
@@ -926,7 +927,7 @@ title="Print to PDF"
 <p>As you can see, the position of <code class="docutils literal notranslate"><span class="pre">the_rest</span></code> variable is flexible based on what we need to isolate.</p>
 <section id="enumerate-function">
 <h3><span class="section-number">5.3.1.1. </span><strong>enumerate()</strong> function<a class="headerlink" href="#enumerate-function" title="Permalink to this headline">#</a></h3>
-<p>The <strong>enumerate()</strong> function is a built-in function in Python used to iterate over sequences of values. It is a more elegant way then the previously used <code class="docutils literal notranslate"><span class="pre">range()</span></code> function since it avoids any <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>s. It receives as argument a sequence of values (<em>iterable</em>) and for each element in the list it returns a tuple consisting of <strong>(key, value)</strong> pairs where the <strong>key</strong> is the index and the <strong>value</strong> is the element in an iterable corresponding to that index. The function itself produces an object of type <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>. If we directly use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function on it, then it will print the memory location of this object. To print its contents element-by-element, we need to add <code class="docutils literal notranslate"><span class="pre">*</span></code> before the enumerate call:</p>
+<p>The <strong>enumerate()</strong> function is a built-in function in Python used to iterate over sequences of values. It is a more elegant way than the previously used <code class="docutils literal notranslate"><span class="pre">range()</span></code> function since it avoids any <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>s. It receives as argument a sequence of values (<em>iterable</em>) and for each element in the list it returns a tuple consisting of <strong>(key, value)</strong> pairs where the <strong>key</strong> is the index and the <strong>value</strong> is the element in an iterable corresponding to that index. The function itself produces an object of type <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>. If we directly use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function on it, then it will print the memory location of this object. To print its contents element-by-element, we need to add <code class="docutils literal notranslate"><span class="pre">*</span></code> before the enumerate call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">fermented_drinks</span><span class="p">))</span>
@@ -1024,7 +1025,7 @@ After: [&#39;wine&#39;, &#39;wine&#39;, &#39;wine&#39;, &#39;wine&#39;]
 </div>
 </div>
 </div>
-<p>As you can see, all elements from positions {1,2,3} were substituted with the elements of the new list (3 <code class="docutils literal notranslate"><span class="pre">wine</span></code>).</p>
+<p>As you can see, all elements from positions {1,2,3} were substituted with the elements of the new list (3 X <code class="docutils literal notranslate"><span class="pre">wine</span></code>).</p>
 </section>
 </section>
 <section id="zip-function">
@@ -1496,7 +1497,7 @@ An example of <em>functional style programming</em> is list-comprehension. Below
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

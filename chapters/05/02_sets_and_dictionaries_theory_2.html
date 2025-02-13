@@ -768,7 +768,7 @@ title="Print to PDF"
 <p class="sidebar-title"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Dictionaries are also ordered from Python version 3.6.x and onwards. This means that the order items are stored in memory depends on how the items are added.</p>
+<p>Dictionaries are also ordered from Python version 3.6.x and onwards. This means that the order in which items are stored in memory depends on the order in which the items are added.</p>
 </div>
 </aside>
 <section id="create-a-dictionary">
@@ -791,7 +791,7 @@ title="Print to PDF"
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">key1</span><span class="p">:</span><span class="n">value1</span><span class="p">,</span> <span class="n">key2</span><span class="p">:</span><span class="n">value2</span><span class="o">....</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>As stated previously, keys have to be unique and immutable. This means that we can use data-types such as strings, integers, floats, tuples, etc as keys. Values can be of any type and can repeat as well.
+<p>As stated previously, keys have to be unique and immutable. This means that we can use data types such as strings, integers, floats, tuples, etc as keys. Values can be of any type and can repeat as well.
 For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,7 +854,7 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If we try to access the value of a key that does not exist, we are going to get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<p>If we try to access the value of a key that does not exist, we will get a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -911,24 +911,6 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
 </div>
 </div>
 </div>
-<p>If the key <code class="docutils literal notranslate"><span class="pre">'K'</span></code> was present and we try to add it again., it will simply overwrite the existing entry.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;Potassium&#39;</span>
-<span class="n">chemical_elements</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
- &#39;C&#39;: &#39;Carbon&#39;,
- &#39;Na&#39;: &#39;Sodium&#39;,
- &#39;H&#39;: &#39;Hydrogen&#39;,
- &#39;K&#39;: &#39;Potassium&#39;}
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="removing-key-value-pairs">
 <h3><span class="section-number">6.2.1.3. </span>Removing key-value pairs<a class="headerlink" href="#removing-key-value-pairs" title="Permalink to this headline">#</a></h3>
@@ -952,8 +934,8 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
 <p>Another way to remove key-value pairs is by using the <code class="docutils literal notranslate"><span class="pre">pop(key_name)</span></code> or <code class="docutils literal notranslate"><span class="pre">popitem()</span></code> methods. The first one removes key-value pair that corresponds to the passed <code class="docutils literal notranslate"><span class="pre">key_name</span></code> argument, while the second one removes the last inserted key-value pair.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span><span class="o">=</span> <span class="s1">&#39;Calcium&#39;</span>
-<span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sodium&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;Ca&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Calcium&#39;</span>
+<span class="n">chemical_elements</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Potassium&#39;</span>
 <span class="n">chemical_elements</span>
 </pre></div>
 </div>
@@ -964,7 +946,7 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
  &#39;Na&#39;: &#39;Sodium&#39;,
  &#39;H&#39;: &#39;Hydrogen&#39;,
  &#39;Ca&#39;: &#39;Calcium&#39;,
- &#39;K&#39;: &#39;Sodium&#39;}
+ &#39;K&#39;: &#39;Potassium&#39;}
 </pre></div>
 </div>
 </div>
@@ -977,7 +959,11 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39;, &#39;Na&#39;: &#39;Sodium&#39;, &#39;H&#39;: &#39;Hydrogen&#39;, &#39;K&#39;: &#39;Sodium&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;O&#39;: &#39;Oxygen&#39;,
+ &#39;C&#39;: &#39;Carbon&#39;,
+ &#39;Na&#39;: &#39;Sodium&#39;,
+ &#39;H&#39;: &#39;Hydrogen&#39;,
+ &#39;K&#39;: &#39;Potassium&#39;}
 </pre></div>
 </div>
 </div>
@@ -995,7 +981,7 @@ Consider a parabola. As you might now, it is symmetric with respect to the y-axi
 </div>
 </div>
 </div>
-<p>If we want to empty the dictionary we can use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method. Mind that this will not delete the dictionary, but it will delete all key value pairs.</p>
+<p>If we want to empty the dictionary we can use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method. Mind that this will not delete the dictionary, but it will delete all key-value pairs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before clearing:&#39;</span><span class="p">,</span> <span class="n">parabola</span><span class="p">)</span>
@@ -1056,7 +1042,7 @@ After clearing: {}
 </section>
 <section id="accessing-keys-values-and-key-value-pairs">
 <h3><span class="section-number">6.2.1.5. </span>Accessing keys, values and key-value pairs<a class="headerlink" href="#accessing-keys-values-and-key-value-pairs" title="Permalink to this headline">#</a></h3>
-<p>In order to get keys, values and key-value pairs of a dictionary we need to use the respective methods: <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code> and  <code class="docutils literal notranslate"><span class="pre">items()</span></code>. All this methods return <em>views</em> of the items retrieved. This means that each time we invoke them, the values from the dictionary will be returned and the return is not saved anywhere. To better understand this, look at this example:</p>
+<p>In order to get keys, values and key-value pairs of a dictionary we need to use the respective methods: <code class="docutils literal notranslate"><span class="pre">keys()</span></code>, <code class="docutils literal notranslate"><span class="pre">values()</span></code> and  <code class="docutils literal notranslate"><span class="pre">items()</span></code>. All these methods return <em>views</em> of the items retrieved. This means that each time we invoke them, the values from the dictionary will be returned and the return is not saved anywhere. To better understand this, look at this example:</p>
 <section id="accessing-keys">
 <h4><span class="section-number">6.2.1.5.1. </span>Accessing keys<a class="headerlink" href="#accessing-keys" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
@@ -1092,7 +1078,7 @@ After clearing: {}
 <p>In order to sort the keys, we can use the <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> method.</p>
 </div>
 </aside>
-<p>First of all, as you can see the return type is <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code>. The second thing to note is that, despite that we do not update the values of the variable <code class="docutils literal notranslate"><span class="pre">chemical_keys</span></code>, it implicitly is updated and contains the new value. This is the role of a view, it gives a view of the keys and it <strong>does not keep a copy</strong> of the keys.</p>
+<p>First of all, as you can see the return type is <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code>. The second thing to note is that, despite that we do not update the values of the variable <code class="docutils literal notranslate"><span class="pre">chemical_keys</span></code>, it implicitly is updated and contains the new value. This is the role of a view, it gives a view of the keys and it <strong>does not keep a deep copy</strong> of the keys.</p>
 </section>
 <section id="accessing-values">
 <h4><span class="section-number">6.2.1.5.2. </span>Accessing values<a class="headerlink" href="#accessing-values" title="Permalink to this headline">#</a></h4>
@@ -1273,7 +1259,7 @@ After clearing: {}
 </pre></div>
 </div>
 <p>Notice that the syntax above will create a dictionary that is the same as the one we are using (<code class="docutils literal notranslate"><span class="pre">old_dictionary</span></code>). You can use lists, or any other iterable to create the dictionary using the comprehension.</p>
-<p>One use case of dictionary comprehension is when we want to reverse a dictionary given that the values are also <em>unique</em>:</p>
+<p>One use case of dictionary comprehension is when we want to reverse a dictionary (i.e., swap the values and keys) given that the values are also <em>unique</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chemical_elements_reverse</span> <span class="o">=</span> <span class="p">{</span>
@@ -1481,7 +1467,7 @@ chemical_elements_2 {&#39;O&#39;: &#39;Oxygen&#39;, &#39;C&#39;: &#39;Carbon&#39
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

@@ -650,7 +650,7 @@ title="Print to PDF"
 <section id="what-are-exceptions">
 <h2><span class="section-number">9.2.1. </span>What are exceptions?<a class="headerlink" href="#what-are-exceptions" title="Permalink to this headline">#</a></h2>
 <p>In all the previous chapters we have seen a lot of errors. All these errors are called <strong>exceptions</strong>. Exceptions are raised when unexpected situations occur during program execution. Some of these situations include division by zero, input that does not match what the program is expecting, trying to use variables that were removed from the execution session, giving wrong input to functions, etc.</p>
-<p>Exceptions, if not handled, result in termination of program execution since the computer would  not know how to resolve the situation. To prevent the program from terminating unexpectedly, there are ways to handle or catch those exceptions, as we will see below.</p>
+<p>Exceptions, if not handled, result in termination of program execution since the computer would  not know how to resolve the situation. To prevent the program from terminating unexpectedly, there are ways to handle or catch those exceptions, as we will see below. This is really useful when we want to write a program that will not terminate, but will instead perform a different action or produce a meaningful error message when an error is encountered.</p>
 </section>
 <section id="exception-handling">
 <h2><span class="section-number">9.2.2. </span>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this headline">#</a></h2>
@@ -662,7 +662,7 @@ execute that code and will not terminate. The syntax to do this is as follows:</
     <span class="n">code</span> <span class="n">to</span> <span class="n">be</span> <span class="n">executed</span> <span class="n">when</span> <span class="n">error</span> <span class="n">occurs</span>
 </pre></div>
 </div>
-<p>As you can see from above the code block has two parts: the <code class="docutils literal notranslate"><span class="pre">try</span></code> and the <code class="docutils literal notranslate"><span class="pre">except</span></code> part. The <code class="docutils literal notranslate"><span class="pre">try</span></code> part specifies the block that will potentially raise an error, while in the <code class="docutils literal notranslate"><span class="pre">except</span></code> part we instruct the computer what o do in case an error occurs.</p>
+<p>As you can see from above the code block has two parts: the <code class="docutils literal notranslate"><span class="pre">try</span></code> and the <code class="docutils literal notranslate"><span class="pre">except</span></code> part. The <code class="docutils literal notranslate"><span class="pre">try</span></code> part specifies the block that will potentially raise an error, while in the <code class="docutils literal notranslate"><span class="pre">except</span></code> part we instruct the computer what to do in case an error occurs.</p>
 <p>Let us have a look at the examples below. The code does the same thing: it divides a number with a list of numbers to find the quotients.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,7 +734,7 @@ Oops, an error has occurred!
 <p>In this example, the error happened when the program tried to divide <code class="docutils literal notranslate"><span class="pre">15</span></code> by <code class="docutils literal notranslate"><span class="pre">hello</span></code>. Since this is not a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>, the first <code class="docutils literal notranslate"><span class="pre">except</span></code> clause is ignored and the second one <code class="docutils literal notranslate"><span class="pre">TypeException</span></code> catches the error.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In case you that you expect different types of errors to occur, then you can list them in <code class="docutils literal notranslate"><span class="pre">except</span></code> clauses one after the other. Also, in case you are not sure what type of error is thrown, you can specify <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause and it will catch (nearly) any type of error thrown. However, this is not usually a good practice in case you would like to distinguish between different types of errors.</p>
+<p>In case you expect different types of errors to occur, then you can list them in <code class="docutils literal notranslate"><span class="pre">except</span></code> clauses one after the other. Also, in case you are not sure what type of error is thrown, you can specify <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause and it will catch (nearly) any type of error thrown. However, this is not usually a good practice in case you would like to distinguish between different types of errors.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -873,7 +873,7 @@ Program terminating...
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Dr. Michal Ziemski and Doriela Grabocka<br/>
+    By Dr. Michal Ziemski, Doriela Grabocka, and Dr. Nicholas Bokulich<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
